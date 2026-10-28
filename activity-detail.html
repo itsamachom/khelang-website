@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">รายละเอียดกิจกรรม - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Sarabun & Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- ตัวแปลง YAML Frontmatter และ Markdown เป็น HTML -->
+    <!-- ตัวแปลง YAML Frontmatter และ Markdown เป็น HTML (สำหรับการอ่านไฟล์ .md เก่า) -->
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -25,7 +28,7 @@
         }
     </script>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased">
+<body class="bg-white text-gray-800 font-sans antialiased selection:bg-accent-green selection:text-white">
 
     <!-- TOP HEADER -->
     <div class="w-full bg-white border-b border-gray-100 py-3">
@@ -67,7 +70,7 @@
                 <i class="fa-solid fa-chevron-right text-[10px]"></i>
                 <span class="text-gray-800 font-semibold">รายละเอียดกิจกรรม</span>
             </div>
-            <h1 id="event-title" class="text-2xl font-black text-gray-900">กำลังโหลดข้อมูล...</h1>
+            <h1 id="event-title" class="text-2xl font-black text-gray-900 leading-snug">กำลังโหลดข้อมูล...</h1>
         </div>
     </section>
 
@@ -84,12 +87,12 @@
 
             <!-- COVER IMAGE -->
             <div class="mb-8 rounded-xl overflow-hidden shadow-sm border border-gray-100">
-                <img id="event-cover" src="" alt="รูปภาพกิจกรรม" class="w-full max-h-[450px] object-cover hidden">
+                <img id="event-cover" src="" alt="รูปภาพกิจกรรม" class="w-full max-h-[500px] object-cover hidden">
             </div>
 
-            <!-- MAIN TEXT CONTENT (MARKDOWN RENDERED) -->
+            <!-- MAIN TEXT CONTENT -->
             <div id="event-body" class="prose max-w-none text-sm text-gray-700 leading-relaxed space-y-4 mb-12">
-                <!-- โค้ด HTML จาก Markdown จะถูกแปะลงตรงนี้ -->
+                <!-- โค้ด HTML หรือข้อความจะถูกแปะลงตรงนี้ -->
             </div>
 
             <!-- GALLERY SECTION -->
@@ -118,64 +121,109 @@
         <p>&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร. สงวนลิขสิทธิ์ทุกประการ.</p>
     </footer>
 
-    <!-- JAVASCRIPT FETCH LOGIC -->
+    <!-- JAVASCRIPT FETCH LOGIC (รองรับทั้ง JSON และ MD) -->
     <script>
         async function loadEventDetail() {
             const urlParams = new URLSearchParams(window.location.search);
-            const eventId = urlParams.get('id');
+            // รองรับทั้งพารามิเตอร์ ?file=xxx.json และ ?id=xxx
+            let fileName = urlParams.get('file') || urlParams.get('id');
 
-            if (!eventId) {
+            if (!fileName) {
                 window.location.href = 'events.html';
                 return;
             }
 
             try {
-                // ดึงไฟล์ .md จากโฟลเดอร์ content/events/
-                const response = await fetch(`content/events/${eventId}.md`);
+                // หากไม่มีนามสกุลไฟล์ ให้พยายามหา .json ก่อน หากไม่เจอค่อยหา .md
+                let isJson = fileName.endsWith('.json');
+                let isMd = fileName.endsWith('.md');
+                
+                if (!isJson && !isMd) {
+                    fileName = `${fileName}.json`;
+                    isJson = true;
+                }
+
+                let response = await fetch(`content/events/${fileName}`);
+                
+                // Fallback: ถ้าเปิด .json ไม่เจอ ลองหา .md เผื่อเป็นไฟล์ระบบเดิม
+                if (!response.ok && isJson) {
+                    const fallbackName = fileName.replace(/\.json$/, '.md');
+                    response = await fetch(`content/events/${fallbackName}`);
+                    if (response.ok) {
+                        isJson = false;
+                        isMd = true;
+                    }
+                }
+
                 if (!response.ok) throw new Error('ไม่พบไฟล์ข่าวสาร');
-                
-                const fileContent = await response.text();
-                
-                // แยกส่วน YAML Frontmatter กับเนื้อหา Markdown
-                const parts = fileContent.split(/^---$/m);
-                if (parts.length < 3) throw new Error('รูปแบบไฟล์ Markdown ไม่ถูกต้อง');
-                
-                const frontmatter = jsyaml.load(parts[1]);
-                const markdownBody = parts.slice(2).join('---');
+
+                let title = '', dateStr = '', location = 'จังหวัดลำปาง', time = '', thumbnail = '', bodyContent = '', gallery = [];
+
+                if (isJson) {
+                    // อ่านข้อมูลจากไฟล์ JSON
+                    const data = await response.json();
+                    title = data.title || 'กิจกรรมข่าวสาร';
+                    dateStr = data.date ? new Date(data.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
+                    location = data.location || 'จังหวัดลำปาง';
+                    time = data.time || '';
+                    thumbnail = data.thumbnail || data.image || '';
+                    bodyContent = data.body ? marked.parse(data.body) : (data.summary || '');
+                    gallery = data.gallery || [];
+                } else {
+                    // อ่านข้อมูลจากไฟล์ Markdown (.md)
+                    const fileContent = await response.text();
+                    const parts = fileContent.split(/^---$/m);
+                    if (parts.length < 3) throw new Error('รูปแบบไฟล์ Markdown ไม่ถูกต้อง');
+                    
+                    const frontmatter = jsyaml.load(parts[1]);
+                    const markdownBody = parts.slice(2).join('---');
+
+                    title = frontmatter.title || 'กิจกรรมข่าวสาร';
+                    dateStr = frontmatter.date || '-';
+                    location = frontmatter.location || 'จังหวัดลำปาง';
+                    time = frontmatter.time || '';
+                    thumbnail = frontmatter.image || frontmatter.thumbnail || '';
+                    bodyContent = marked.parse(markdownBody);
+                    gallery = frontmatter.gallery || [];
+                }
 
                 // แสดงผลข้อมูลข้อความ
-                document.title = `${frontmatter.title} - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร`;
-                document.getElementById('page-title').innerText = frontmatter.title;
-                document.getElementById('event-title').innerText = frontmatter.title;
-                document.getElementById('event-date').innerText = frontmatter.date || '-';
-                document.getElementById('event-location').innerText = frontmatter.location || 'จังหวัดลำปาง';
+                document.title = `${title} - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร`;
+                document.getElementById('event-title').innerText = title;
+                document.getElementById('event-date').innerText = dateStr;
+                document.getElementById('event-location').innerText = location;
 
-                if (frontmatter.time) {
-                    document.getElementById('event-time').innerText = frontmatter.time;
+                if (time) {
+                    document.getElementById('event-time').innerText = time;
                     document.getElementById('meta-time-box').classList.remove('hidden');
                 }
 
                 // แสดงผลรูปปก
-                if (frontmatter.image) {
+                if (thumbnail) {
                     const coverImg = document.getElementById('event-cover');
-                    coverImg.src = frontmatter.image;
+                    coverImg.src = thumbnail;
                     coverImg.classList.remove('hidden');
                 }
 
-                // แปลง Markdown เป็น HTML
-                document.getElementById('event-body').innerHTML = marked.parse(markdownBody);
+                // แสดงผลเนื้อหาข่าวสาร
+                document.getElementById('event-body').innerHTML = bodyContent;
 
                 // แสดงผลภาพ Gallery
-                if (frontmatter.gallery && frontmatter.gallery.length > 0) {
+                if (Array.isArray(gallery) && gallery.length > 0) {
                     const gallerySection = document.getElementById('gallery-section');
                     const galleryContainer = document.getElementById('event-gallery');
                     gallerySection.classList.remove('hidden');
                     
-                    galleryContainer.innerHTML = frontmatter.gallery.map(imgPath => `
-                        <div class="overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                            <img src="${imgPath}" alt="ภาพกิจกรรม" class="w-full h-48 object-cover hover:scale-105 transition duration-300">
-                        </div>
-                    `).join('');
+                    galleryContainer.innerHTML = gallery.map(item => {
+                        // รองรับทั้ง Array ของสตริง URL หรือ Array ของวัตถุ { image: '...' }
+                        const imgPath = typeof item === 'string' ? item : (item.image || item.url || '');
+                        if (!imgPath) return '';
+                        return `
+                            <div class="overflow-hidden rounded-lg shadow-sm border border-gray-100 group">
+                                <img src="${imgPath}" alt="ภาพกิจกรรม" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" onerror="this.parentElement.style.display='none'">
+                            </div>
+                        `;
+                    }).join('');
                 }
 
             } catch (error) {
@@ -190,7 +238,7 @@
             }
         }
 
-        loadEventDetail();
+        document.addEventListener('DOMContentLoaded', loadEventDetail);
     </script>
 </body>
 </html>
