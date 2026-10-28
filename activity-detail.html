@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">รายละเอียดกิจกรรม - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Sarabun & Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- ตัวแปลง YAML Frontmatter และ Markdown เป็น HTML (สำหรับการอ่านไฟล์ .md เก่า) -->
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -28,7 +24,7 @@
         }
     </script>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased selection:bg-accent-green selection:text-white">
+<body class="bg-white text-gray-800 font-sans antialiased">
 
     <!-- TOP HEADER -->
     <div class="w-full bg-white border-b border-gray-100 py-3">
@@ -74,39 +70,30 @@
         </div>
     </section>
 
-    <!-- DETAIL CONTENT CONTAINER -->
+    <!-- MAIN CONTENT -->
     <main class="py-12 bg-white">
         <div id="event-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- META INFO -->
             <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 mb-8 pb-4 border-b border-gray-100">
                 <span id="badge-date" class="bg-accent-green text-white font-bold px-3 py-1 rounded-full"><i class="fa-regular fa-calendar-days mr-1"></i> <span id="event-date">-</span></span>
                 <span id="meta-time-box" class="hidden"><i class="fa-regular fa-clock text-accent-green mr-1"></i> <span id="event-time"></span></span>
                 <span><i class="fa-solid fa-location-dot text-accent-green mr-1"></i> <span id="event-location">จังหวัดลำปาง</span></span>
             </div>
 
-            <!-- COVER IMAGE -->
             <div class="mb-8 rounded-xl overflow-hidden shadow-sm border border-gray-100">
                 <img id="event-cover" src="" alt="รูปภาพกิจกรรม" class="w-full max-h-[500px] object-cover hidden">
             </div>
 
-            <!-- MAIN TEXT CONTENT -->
-            <div id="event-body" class="prose max-w-none text-sm text-gray-700 leading-relaxed space-y-4 mb-12">
-                <!-- โค้ด HTML หรือข้อความจะถูกแปะลงตรงนี้ -->
-            </div>
+            <div id="event-body" class="prose max-w-none text-sm text-gray-700 leading-relaxed space-y-4 mb-12"></div>
 
-            <!-- GALLERY SECTION -->
             <div id="gallery-section" class="border-t border-gray-200 pt-8 hidden">
                 <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
                     <i class="fa-solid fa-images text-accent-green"></i>
                     ประมวลภาพบรรยากาศกิจกรรม
                 </h3>
-                <div id="event-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <!-- รายการรูปภาพ Gallery จะถูกดึงมาวางตรงนี้ -->
-                </div>
+                <div id="event-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
             </div>
 
-            <!-- BACK BUTTON -->
             <div class="mt-12 text-center">
                 <a href="events.html" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold px-6 py-3 rounded-md transition">
                     <i class="fa-solid fa-arrow-left"></i> ย้อนกลับไปหน้ารวมกิจกรรม
@@ -116,53 +103,40 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="bg-accent-darkGreen text-white py-8 text-center text-xs">
         <p>&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร. สงวนลิขสิทธิ์ทุกประการ.</p>
     </footer>
 
-    <!-- JAVASCRIPT FETCH LOGIC (รองรับทั้ง JSON และ MD) -->
     <script>
         async function loadEventDetail() {
             const urlParams = new URLSearchParams(window.location.search);
-            // รองรับทั้งพารามิเตอร์ ?file=xxx.json และ ?id=xxx
-            let fileName = urlParams.get('file') || urlParams.get('id');
+            let rawParam = urlParams.get('file') || urlParams.get('id');
 
-            if (!fileName) {
+            if (!rawParam) {
                 window.location.href = 'events.html';
                 return;
             }
 
             try {
-                // หากไม่มีนามสกุลไฟล์ ให้พยายามหา .json ก่อน หากไม่เจอค่อยหา .md
-                let isJson = fileName.endsWith('.json');
-                let isMd = fileName.endsWith('.md');
+                let targetFile = rawParam;
+                let response = await fetch(`content/events/${targetFile}`);
                 
-                if (!isJson && !isMd) {
-                    fileName = `${fileName}.json`;
-                    isJson = true;
-                }
-
-                let response = await fetch(`content/events/${fileName}`);
-                
-                // Fallback: ถ้าเปิด .json ไม่เจอ ลองหา .md เผื่อเป็นไฟล์ระบบเดิม
-                if (!response.ok && isJson) {
-                    const fallbackName = fileName.replace(/\.json$/, '.md');
-                    response = await fetch(`content/events/${fallbackName}`);
-                    if (response.ok) {
-                        isJson = false;
-                        isMd = true;
+                if (!response.ok && !targetFile.endsWith('.json') && !targetFile.endsWith('.md')) {
+                    response = await fetch(`content/events/${targetFile}.json`);
+                    if (response.ok) targetFile = `${targetFile}.json`;
+                    else {
+                        response = await fetch(`content/events/${targetFile}.md`);
+                        if (response.ok) targetFile = `${targetFile}.md`;
                     }
                 }
 
-                if (!response.ok) throw new Error('ไม่พบไฟล์ข่าวสาร');
+                if (!response.ok) throw new Error('ไม่พบไฟล์กิจกรรม');
 
                 let title = '', dateStr = '', location = 'จังหวัดลำปาง', time = '', thumbnail = '', bodyContent = '', gallery = [];
 
-                if (isJson) {
-                    // อ่านข้อมูลจากไฟล์ JSON
+                if (targetFile.endsWith('.json')) {
                     const data = await response.json();
-                    title = data.title || 'กิจกรรมข่าวสาร';
+                    title = data.title || 'กิจกรรมสมาคม';
                     dateStr = data.date ? new Date(data.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
                     location = data.location || 'จังหวัดลำปาง';
                     time = data.time || '';
@@ -170,24 +144,26 @@
                     bodyContent = data.body ? marked.parse(data.body) : (data.summary || '');
                     gallery = data.gallery || [];
                 } else {
-                    // อ่านข้อมูลจากไฟล์ Markdown (.md)
                     const fileContent = await response.text();
-                    const parts = fileContent.split(/^---$/m);
-                    if (parts.length < 3) throw new Error('รูปแบบไฟล์ Markdown ไม่ถูกต้อง');
+                    // แก้ไข Regex รองรับ \r\n ของ Windows
+                    const parts = fileContent.split(/^---\r?$/m);
                     
-                    const frontmatter = jsyaml.load(parts[1]);
-                    const markdownBody = parts.slice(2).join('---');
+                    if (parts.length >= 3) {
+                        const frontmatter = jsyaml.load(parts[1]);
+                        const markdownBody = parts.slice(2).join('---');
 
-                    title = frontmatter.title || 'กิจกรรมข่าวสาร';
-                    dateStr = frontmatter.date || '-';
-                    location = frontmatter.location || 'จังหวัดลำปาง';
-                    time = frontmatter.time || '';
-                    thumbnail = frontmatter.image || frontmatter.thumbnail || '';
-                    bodyContent = marked.parse(markdownBody);
-                    gallery = frontmatter.gallery || [];
+                        title = frontmatter.title || 'กิจกรรมสมาคม';
+                        dateStr = frontmatter.date || '-';
+                        location = frontmatter.location || 'จังหวัดลำปาง';
+                        time = frontmatter.time || '';
+                        thumbnail = frontmatter.image || frontmatter.thumbnail || '';
+                        bodyContent = marked.parse(markdownBody);
+                        gallery = frontmatter.gallery || [];
+                    } else {
+                        bodyContent = marked.parse(fileContent);
+                    }
                 }
 
-                // แสดงผลข้อมูลข้อความ
                 document.title = `${title} - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร`;
                 document.getElementById('event-title').innerText = title;
                 document.getElementById('event-date').innerText = dateStr;
@@ -198,24 +174,20 @@
                     document.getElementById('meta-time-box').classList.remove('hidden');
                 }
 
-                // แสดงผลรูปปก
                 if (thumbnail) {
                     const coverImg = document.getElementById('event-cover');
                     coverImg.src = thumbnail;
                     coverImg.classList.remove('hidden');
                 }
 
-                // แสดงผลเนื้อหาข่าวสาร
                 document.getElementById('event-body').innerHTML = bodyContent;
 
-                // แสดงผลภาพ Gallery
                 if (Array.isArray(gallery) && gallery.length > 0) {
                     const gallerySection = document.getElementById('gallery-section');
                     const galleryContainer = document.getElementById('event-gallery');
                     gallerySection.classList.remove('hidden');
                     
                     galleryContainer.innerHTML = gallery.map(item => {
-                        // รองรับทั้ง Array ของสตริง URL หรือ Array ของวัตถุ { image: '...' }
                         const imgPath = typeof item === 'string' ? item : (item.image || item.url || '');
                         if (!imgPath) return '';
                         return `
