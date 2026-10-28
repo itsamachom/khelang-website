@@ -3,6 +3,7 @@ backend:
   repo: itsamachom/khelang-website.git # เปลี่ยนเป็น Username และ ชื่อ Repo บน GitHub ของคุณ
   branch: main
   base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/ # URL ของ Cloudflare Worker ล็อกอิน (ตั้งค่าในขั้นตอนที่ 3)
+  auth_endpoint: /auth
 
 media_folder: "images/events"
 public_folder: "images/events"
