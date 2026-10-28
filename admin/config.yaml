@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: itsamachom/khelang-website.git # เปลี่ยนเป็น Username และ ชื่อ Repo บน GitHub ของคุณ
+  branch: main
+  base_url: https://mnba-web-master.super-poetry-60ea.workers.dev/ # URL ของ Cloudflare Worker ล็อกอิน (ตั้งค่าในขั้นตอนที่ 3)
+
+media_folder: "images/events"
+public_folder: "images/events"
+
+collections:
+  - name: "events"
+    label: "กิจกรรม & ข่าวสาร"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "หัวข้อข่าว/กิจกรรม", name: "title", widget: "string" }
+      - { label: "วันที่จัดกิจกรรม", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "เวลาจัดกิจกรรม", name: "time", widget: "string", required: false }
+      - { label: "สถานที่จัดงาน", name: "location", widget: "string", required: false }
+      - { label: "รูปภาพปก (Cover Image)", name: "image", widget: "image" }
+      - { label: "เรื่องย่อ (แสดงในหน้ารวม)", name: "summary", widget: "text" }
+      - label: "ประมวลภาพกิจกรรม (Gallery)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "รูปภาพ", name: "photo", widget: "image" }
+      - { label: "เนื้อหาข่าวฉบับเต็ม", name: "body", widget: "markdown" }
