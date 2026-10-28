@@ -11,12 +11,6 @@ site_url: "https://khelang-website.pages.dev/"  # ใส่ URL หน้าเ�
 media_folder: "images/events"
 public_folder: "/images/events"
 
-# ✅ ตั้งค่า media_library โดยใส่ name: default เพื่อป้องกัน Error
-media_library:
-  name: default
-  config:
-    multiple: true
-
 collections:
   - name: "events"
     label: "กิจกรรม & ข่าวสาร"
@@ -29,7 +23,7 @@ collections:
     editor:
       preview: false
       
-    # ✅ แยกโฟลเดอร์รูปภาพตามปี-เดือน-วัน ของกิจกรรม
+    # แยกโฟลเดอร์รูปภาพตามวันที่ของกิจกรรมอัตโนมัติ (ช่วยป้องการเซฟรูปชื่อซ้ำทับกัน)
     media_folder: "images/events/{{year}}-{{month}}-{{day}}"
     public_folder: "/images/events/{{year}}-{{month}}-{{day}}"
     
