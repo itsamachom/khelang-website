@@ -3,17 +3,27 @@ backend:
   repo: your-github-username/khelang-website   # เปลี่ยนเป็น username/ชื่อ repository ของคุณ
   branch: main
 
-media_folder: "images"
-public_folder: "images"
+media_folder: "images/events"
+public_folder: "images/events"
 
 collections:
   - name: "events"
-    label: "กิจกรรมและข่าวสาร"
+    label: "กิจกรรม & ข่าวสาร"
     folder: "content/events"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-activity-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
     fields:
-      - { label: "หัวข้อข่าว", name: "title", widget: "string" }
-      - { label: "วันที่เผยแพร่", name: "date", widget: "datetime" }
-      - { label: "รายละเอียดข่าว", name: "body", widget: "markdown" }
-      - { label: "รูปภาพแกลเลอรี", name: "gallery", widget: "list", field: { label: "รูปภาพ", name: "image", widget: "image" } }
+      - { label: "หัวข้อข่าว/กิจกรรม", name: "title", widget: "string" }
+      - { label: "วันที่จัดกิจกรรม", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "เวลาจัดกิจกรรม", name: "time", widget: "string", required: false }
+      - { label: "สถานที่จัดงาน", name: "location", widget: "string", required: false }
+      - { label: "รูปภาพปก (Cover Image)", name: "image", widget: "image" }
+      - { label: "เรื่องย่อ (แสดงในหน้ารวม)", name: "summary", widget: "text" }
+      - label: "ประมวลภาพกิจกรรม (Gallery)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "รูปภาพ", name: "photo", widget: "image" }
+      - { label: "เนื้อหาข่าวฉบับเต็ม", name: "body", widget: "markdown" }
