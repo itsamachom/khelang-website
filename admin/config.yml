@@ -1,12 +1,15 @@
 backend:
   name: github
-  repo: itsamachom/khelang-website # เปลี่ยนเป็น Username และ ชื่อ Repo บน GitHub ของคุณ
+  repo: itsamachom/khelang-website
   branch: main
-  base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/ # URL ของ Cloudflare Worker ล็อกอิน (ตั้งค่าในขั้นตอนที่ 3)
+  base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/ # ใส่ URL Worker ของคุณ
   auth_endpoint: /auth
 
-media_folder: "images/events"
-public_folder: "images/events"
+# 1. เพิ่มปุ่มกลับไปหน้าเว็บหลัก
+site_url: "https://khelang-website.pages.dev/events" # ใส่ URL หน้าเว็บจริงของคุณ
+
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "events"
@@ -14,18 +17,27 @@ collections:
     folder: "content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    
+    # (แนะนำ) เปลี่ยนการบันทึกจาก Markdown เป็น JSON เพื่อให้หน้าเว็บ HTML ดึงไปแสดงผลง่ายขึ้น
+    format: "json"
+    extension: "json"
+    
+    # 2. ปิดหน้า Preview
     editor:
       preview: false
+      
+    # 3. แยกโฟลเดอร์รูปภาพตามปี-เดือน-วัน ของกิจกรรมนั้นๆ อัตโนมัติ
+    media_folder: "{{year}}-{{month}}-{{day}}"
+    public_folder: "/images/events/{{year}}-{{month}}-{{day}}"
+    
     fields:
       - { label: "หัวข้อข่าว/กิจกรรม", name: "title", widget: "string" }
-      - { label: "วันที่จัดกิจกรรม", name: "date", widget: "date", format: "YYYY-MM-DD" }
-      - { label: "เวลาจัดกิจกรรม", name: "time", widget: "string", required: false }
-      - { label: "สถานที่จัดงาน", name: "location", widget: "string", required: false }
-      - { label: "รูปภาพปก (Cover Image)", name: "image", widget: "image" }
+      # 4. แก้ Error วิดเจ็ตวันที่
+      - { label: "วันที่จัดกิจกรรม", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "เวลาจัดกิจกรรม (OPTIONAL)", name: "time", widget: "string", required: false }
+      - { label: "สถานที่จัดงาน (OPTIONAL)", name: "location", widget: "string", required: false }
+      - { label: "รูปภาพปก (COVER IMAGE)", name: "thumbnail", widget: "image" }
       - { label: "เรื่องย่อ (แสดงในหน้ารวม)", name: "summary", widget: "text" }
-      - label: "ประมวลภาพกิจกรรม (Gallery)"
-        name: "gallery"
-        widget: "list"
-        required: false
-        field: { label: "รูปภาพ", name: "photo", widget: "image" }
-      - { label: "เนื้อหาข่าวฉบับเต็ม", name: "body", widget: "markdown" }
+      - { label: "รายละเอียด", name: "body", widget: "markdown" }
+      # 5. เปิดให้อัปโหลดภาพแกลเลอรีได้หลายภาพพร้อมกัน
+      - { label: "รูปภาพแกลเลอรี", name: "gallery", widget: "image", allow_multiple: true, required: false }
