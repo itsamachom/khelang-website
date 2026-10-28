@@ -11,6 +11,12 @@ site_url: "https://khelang-website.pages.dev/"  # ใส่ URL หน้าเ�
 media_folder: "images/events"
 public_folder: "/images/events"
 
+# 💡 เพิ่มการตั้งชื่อไฟล์ภาพที่อัปโหลดให้เติม Timestamp/เวลา นำหน้าอัตโนมัติ
+media_library:
+  config:
+    multiple: true
+  slug: "{{path}}/{{filename}}-{{now}}"
+
 collections:
   - name: "events"
     label: "กิจกรรม & ข่าวสาร"
