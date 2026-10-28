@@ -7,15 +7,15 @@ backend:
 
 site_url: "https://khelang-website.pages.dev/"  # ใส่ URL หน้าเว็บจริงของคุณ
 
-# กำหนดโฟลเดอร์รูปภาพระดับ Global (ระบุ / นำหน้าใน public_folder)
+# กำหนดโฟลเดอร์เก็บรูปภาพระดับ Global
 media_folder: "images/events"
 public_folder: "/images/events"
 
-# 💡 เพิ่มการตั้งชื่อไฟล์ภาพที่อัปโหลดให้เติม Timestamp/เวลา นำหน้าอัตโนมัติ
+# ✅ ตั้งค่า media_library โดยใส่ name: default เพื่อป้องกัน Error
 media_library:
+  name: default
   config:
     multiple: true
-  slug: "{{path}}/{{filename}}-{{now}}"
 
 collections:
   - name: "events"
@@ -29,8 +29,9 @@ collections:
     editor:
       preview: false
       
-    media_folder: "images/events"
-    public_folder: "/images/events"
+    # ✅ แยกโฟลเดอร์รูปภาพตามปี-เดือน-วัน ของกิจกรรม
+    media_folder: "images/events/{{year}}-{{month}}-{{day}}"
+    public_folder: "/images/events/{{year}}-{{month}}-{{day}}"
     
     fields:
       - { label: "หัวข้อข่าว/กิจกรรม", name: "title", widget: "string" }
