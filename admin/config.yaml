@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-github-username/khelang-website   # เปลี่ยนเป็น username/ชื่อ repository ของคุณ
+  repo: itsamachom/khelang-website   # เปลี่ยนเป็น username/ชื่อ repository ของคุณ
   branch: main
 
 media_folder: "images/events"
