@@ -2,7 +2,7 @@ backend:
   name: github
   repo: itsamachom/khelang-website.git # เปลี่ยนเป็น Username และ ชื่อ Repo บน GitHub ของคุณ
   branch: main
-  base_url: https://mnba-web-master.super-poetry-60ea.workers.dev/ # URL ของ Cloudflare Worker ล็อกอิน (ตั้งค่าในขั้นตอนที่ 3)
+  base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/ # URL ของ Cloudflare Worker ล็อกอิน (ตั้งค่าในขั้นตอนที่ 3)
 
 media_folder: "images/events"
 public_folder: "images/events"
@@ -28,9 +28,3 @@ collections:
         required: false
         field: { label: "รูปภาพ", name: "photo", widget: "image" }
       - { label: "เนื้อหาข่าวฉบับเต็ม", name: "body", widget: "markdown" }
-      backend:
-  name: github
-  repo: itsamachom/khelang-website.git # เปลี่ยนเป็น username/repo ของคุณ
-  branch: main
-  base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/
-  auth_endpoint: /auth
