@@ -324,7 +324,7 @@
                 // กรองเฉพาะไฟล์ .json หรือ .md และเรียงตามลำดับชื่อไฟล์ (วันที่) ใหม่ไปเก่า แล้วเลือก 3 อันแรก
                 const validFiles = files.filter(file => file.name.endsWith('.json') || file.name.endsWith('.md'))
                                          .sort((a, b) => b.name.localeCompare(a.name))
-                                         .slice(0, 3); 
+                                         .slice(0, 6); 
 
                 if (validFiles.length === 0) {
                     container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10">ยังไม่มีกิจกรรมในขณะนี้</p>';
