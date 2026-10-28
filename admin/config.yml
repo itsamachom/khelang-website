@@ -2,14 +2,13 @@ backend:
   name: github
   repo: itsamachom/khelang-website
   branch: main
-  base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/ # ใส่ URL Worker ของคุณ
+  base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/  # URL Worker ของคุณ
   auth_endpoint: /auth
 
-# 1. เพิ่มปุ่มกลับไปหน้าเว็บหลัก
-site_url: "https://khelang-website.pages.dev/events" # ใส่ URL หน้าเว็บจริงของคุณ
+site_url: "https://khelang-website-active.pages.dev"  # URL เว็บไซต์หลักของคุณ
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "/images/events"
+public_folder: "/images/events"
 
 collections:
   - name: "events"
@@ -17,27 +16,21 @@ collections:
     folder: "content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    
-    # (แนะนำ) เปลี่ยนการบันทึกจาก Markdown เป็น JSON เพื่อให้หน้าเว็บ HTML ดึงไปแสดงผลง่ายขึ้น
     format: "json"
     extension: "json"
     
-    # 2. ปิดหน้า Preview
     editor:
       preview: false
       
-    # 3. แยกโฟลเดอร์รูปภาพตามปี-เดือน-วัน ของกิจกรรมนั้นๆ อัตโนมัติ
-    media_folder: "{{year}}-{{month}}-{{day}}"
-    public_folder: "/images/events/{{year}}-{{month}}-{{day}}"
+    media_folder: "/images/events"
+    public_folder: "/images/events"
     
     fields:
       - { label: "หัวข้อข่าว/กิจกรรม", name: "title", widget: "string" }
-      # 4. แก้ Error วิดเจ็ตวันที่
       - { label: "วันที่จัดกิจกรรม", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "เวลาจัดกิจกรรม (OPTIONAL)", name: "time", widget: "string", required: false }
       - { label: "สถานที่จัดงาน (OPTIONAL)", name: "location", widget: "string", required: false }
       - { label: "รูปภาพปก (COVER IMAGE)", name: "thumbnail", widget: "image" }
       - { label: "เรื่องย่อ (แสดงในหน้ารวม)", name: "summary", widget: "text" }
       - { label: "รายละเอียด", name: "body", widget: "markdown" }
-      # 5. เปิดให้อัปโหลดภาพแกลเลอรีได้หลายภาพพร้อมกัน
       - { label: "รูปภาพแกลเลอรี", name: "gallery", widget: "image", allow_multiple: true, required: false }
