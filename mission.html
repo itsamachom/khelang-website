@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>พันธกิจหลัก & วัตถุประสงค์ - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e', navGreen: '#1e7e34' }, dark: { bg: '#181818', card: '#222222' } },
+                    fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+    <!-- TOP HEADER -->
+    <div class="w-full bg-white border-b border-gray-100 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="โลโก้สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร" class="w-10 h-10 object-contain rounded">
+                <div>
+                    <span class="text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
+                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Mueang Khelang Nakorn Business Tourism Assocication</span>
+                </div>
+            </a>
+            <div class="flex flex-wrap items-center gap-6 text-xs text-gray-600">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-accent-green"></i><span>091-499-2294</span></div>
+                <div class="hidden sm:flex items-center gap-2"><i class="fa-solid fa-location-dot text-accent-green"></i><span>316 ม.3 ต.ต้นธงชัย อ.เมืองลำปาง 52000</span></div>
+                <a href="contact.html" class="bg-accent-green hover:bg-accent-hover text-white font-bold px-4 py-2 rounded text-xs transition uppercase">ติดต่อสมาคม</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="w-full bg-accent-navGreen text-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gray-200 transition">หน้าหลัก</a>
+                <a href="about.html" class="hover:text-gray-200 transition">เกี่ยวกับสมาคม</a>
+                <a href="mission.html" class="text-yellow-300 font-extrabold border-b-2 border-yellow-300 pb-0.5">พันธกิจหลัก</a>
+                <a href="events.html" class="hover:text-gray-200 transition">กิจกรรม & ข่าวสาร</a>
+                <a href="contact.html" class="hover:text-gray-200 transition">ติดต่อเรา</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2"><i class="fa-solid fa-bars text-lg"></i></button>
+            <div class="hidden md:block text-xs font-medium text-white/80">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="w-full bg-gray-700 text-white py-14 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-3xl font-black mb-2">วิสัยทัศน์ พันธกิจ และวัตถุประสงค์สมาคมฯ</h1>
+            <p class="text-xs text-gray-200">คุณวารุณี เมฆอากาศ นายกสมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (วาระปี 2569 - 2571)</p>
+        </div>
+    </section>
+
+    <!-- 5 MISSIONS -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-black text-center text-gray-900 mb-10">วิสัยทัศน์ & พันธกิจ ๕ ประการ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                    <div class="text-accent-green font-extrabold text-xl mb-2">1. Cultural Soft Power</div>
+                    <p class="text-xs text-gray-600 leading-relaxed">ชูอัตลักษณ์วัฒนธรรมสร้างมูลค่า นำทุนทางวัฒนธรรม ประวัติศาสตร์ล้านนา อัตลักษณ์วิถีชีวิตชาวเขลางค์นคร (วัด, รถม้าลำปาง, ผ้าย้อมครั่ง, อาหารถิ่น, เซรามิค, สถาปัตยกรรมไม้สักโบราณ) มาเพิ่มมูลค่าทางเศรษฐกิจ ดึงดูดนักท่องเที่ยวกลุ่มมูลค่าสูง</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                    <div class="text-accent-green font-extrabold text-xl mb-2">2. Collaborative Ecosystem</div>
+                    <p class="text-xs text-gray-600 leading-relaxed">บูรณาการภาคีเครือข่ายแบบไร้รอยต่อ สร้างความสัมพันธ์อันดีระหว่างผู้ประกอบการกับภาครัฐ เอกชน และภาคการศึกษา ร่วมกับ อบจ., เทศบาล, ททท., ทกจ., วัฒนธรรมจังหวัด, วิทยาลัยอินเตอร์เทคลำปาง เพื่อแก้ปัญหาและผลักดันยุทธศาสตร์ท่องเที่ยว</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                    <div class="text-accent-green font-extrabold text-xl mb-2">3. Smart Tourism</div>
+                    <p class="text-xs text-gray-600 leading-relaxed">ยกระดับสู่ Smart Tourism ด้วยเทคโนโลยีและข้อมูล นำนวัตกรรมและ Data Analytics มาวิเคราะห์พฤติกรรมนักท่องเที่ยว วางแผนกลยุทธ์ตลาดเชิงรุกเพื่อกระจายรายได้สู่ผู้ประกอบการทุกระดับอย่างทั่วถึง</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg">
+                    <div class="text-accent-green font-extrabold text-xl mb-2">4. Green & Sustainable Tourism</div>
+                    <p class="text-xs text-gray-600 leading-relaxed">พัฒนาบุคลากรและสร้างความยั่งยืน ยกระดับทักษะผู้ประกอบการ มัคคุเทศก์ และแรงงานภาคบริการ มุ่งเน้นการท่องเที่ยวที่เป็นมิตรต่อสิ่งแวดล้อม รักษาสมดุลระหว่างเศรษฐกิจชุมชนและการอนุรักษ์ธรรมชาติ</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg md:col-span-2 lg:col-span-1">
+                    <div class="text-accent-green font-extrabold text-xl mb-2">5. Good Governance</div>
+                    <p class="text-xs text-gray-600 leading-relaxed">บริหารงานด้วยหลักธรรมาภิบาล ปลอดการพนันและการเมือง ยึดมั่นความซื่อสัตย์สุจริต โปร่งใส ไม่เกี่ยวข้องกับอบายมุข สิ่งผิดกฎหมาย หรือการจัดตั้งโต๊ะบิลเลียด/สนุกเกอร์ และวางตัวเป็นกลางทางการเมือง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9 OBJECTIVES -->
+    <section class="py-16 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-black text-center text-gray-900 mb-10">วัตถุประสงค์ของสมาคม (๙ ข้อ)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๑</strong>อนุรักษ์และสงวนไว้ซึ่งแหล่งท่องเที่ยวทางธรรมชาติ และส่งเสริมแหล่งท่องเที่ยวในชุมชนท้องถิ่น ในพื้นที่จังหวัดลำปาง ให้คงรูปถาวรสืบไป</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๒</strong>ส่งเสริมให้เกิดแหล่งท่องเที่ยวแห่งใหม่ และพัฒนาแหล่งท่องเที่ยวที่มีอยู่เดิม ให้เป็นที่รู้จักแพร่หลายได้มาตรฐานยิ่งขึ้น</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๓</strong>สร้างความสัมพันธ์อันดีงามระหว่างผู้ประกอบการท่องเที่ยวกับภาครัฐและภาคเอกชน</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๔</strong>ยกระดับการประกอบธุรกิจการท่องเที่ยว รวมทั้งพัฒนาบุคลากรภายในท้องถิ่น ให้ได้มาตรฐานที่เป็นที่ยอมรับและเกิดความประทับใจ</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๕</strong>เสริมสร้างและแลกเปลี่ยนความรู้ความคิดเห็น ตลอดจนให้ความร่วมมือช่วยเหลือซึ่งกันและกัน ระหว่างมวลหมู่สมาชิกหรือกับหน่วยงานภาครัฐและเอกชน</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๖</strong>เสริมสร้างและกระจายรายได้จากนักท่องเที่ยวผ่านภาคอุตสาหกรรมการท่องเที่ยว ไปสู่ประชาชนในท้องถิ่นโดยทั่วไปอย่างต่อเนื่อง</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๗</strong>ดำเนินการหาทุนเพื่อดำเนินตามวัตถุประสงค์ และความก้าวหน้าของสมาคมฯ</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๘</strong>ไม่จัดตั้งโต๊ะบิลเลียด และสนุกเกอร์</div>
+                <div class="p-4 bg-white border border-gray-200 rounded shadow-sm text-xs"><strong class="text-accent-green block mb-1">ข้อ ๙</strong>ไม่ดำเนินการใดๆ ที่เกี่ยวข้องกับการเมือง</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-accent-darkGreen text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10 text-xs">
+                <div>
+                    <h4 class="font-extrabold text-base mb-4 tracking-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</h4>
+                    <p class="text-gray-300 leading-relaxed">เลขที่ ๓๑๖ ม.๓ ต.ต้นธงชัย อำเภอเมืองลำปาง จังหวัดลำปาง ๕๒٠๐๐</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ลิงก์เมนูหลัก</h4>
+                    <ul class="space-y-2.5 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition">หน้าหลัก</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">เกี่ยวกับสมาคม</a></li>
+                        <li><a href="mission.html" class="hover:text-white transition">พันธกิจหลัก</a></li>
+                        <li><a href="events.html" class="hover:text-white transition">กิจกรรม & ข่าวสาร</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ช่องทางติดต่อ</h4>
+                    <p class="text-gray-300">โทรศัพท์: ๐๙๑-๔๙๙๒๒๙๔</p>
+                    <p class="text-gray-300 mt-2">ต.ต้นธงชัย อ.เมืองลำปาง จ.ลำปาง</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">นายกสมาคมฯ</h4>
+                    <p class="text-gray-300">นางวารุณี เมฆอากาศ</p>
+                    <p class="text-gray-400 text-[11px] mt-1">วาระปี 2569 - 2571</p>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-gray-400 text-[11px]">&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (M.N.B.A). สงวนลิขสิทธิ์ทุกประการ.</div>
+        </div>
+    </footer>
+</body>
+</html>

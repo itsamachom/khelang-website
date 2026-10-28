@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับสมาคม & คณะกรรมการ - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Sarabun & Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e', navGreen: '#1e7e34' }, 
+                        dark: { bg: '#181818', card: '#222222' } 
+                    },
+                    fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+    <!-- TOP HEADER -->
+    <div class="w-full bg-white border-b border-gray-100 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="โลโก้สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร" class="w-10 h-10 object-contain rounded">
+                <div>
+                    <span class="text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
+                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Mueang Khelang Nakorn Business Tourism Assocication</span>
+                </div>
+            </a>
+            <div class="flex flex-wrap items-center gap-6 text-xs text-gray-600">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-accent-green"></i><span>091-499-2294</span></div>
+                <div class="hidden sm:flex items-center gap-2"><i class="fa-solid fa-location-dot text-accent-green"></i><span>316 ม.3 ต.ต้นธงชัย อ.เมืองลำปาง 52000</span></div>
+                <a href="contact.html" class="bg-accent-green hover:bg-accent-hover text-white font-bold px-4 py-2 rounded text-xs transition uppercase">ติดต่อสมาคม</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <nav class="w-full bg-accent-navGreen text-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gray-200 transition">หน้าหลัก</a>
+                <a href="about.html" class="text-yellow-300 font-extrabold border-b-2 border-yellow-300 pb-0.5">เกี่ยวกับสมาคม</a>
+                <a href="mission.html" class="hover:text-gray-200 transition">พันธกิจหลัก</a>
+                <a href="events.html" class="hover:text-gray-200 transition">กิจกรรม & ข่าวสาร</a>
+                <a href="contact.html" class="hover:text-gray-200 transition">ติดต่อเรา</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle Menu"><i class="fa-solid fa-bars text-lg"></i></button>
+            <div class="hidden md:block text-xs font-medium text-white/80">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-accent-darkGreen border-t border-white/10 px-6 py-4 space-y-3 text-xs font-semibold">
+            <a href="index.html" class="block text-white">หน้าหลัก</a>
+            <a href="about.html" class="block text-yellow-300 font-bold">เกี่ยวกับสมาคม</a>
+            <a href="mission.html" class="block text-white">พันธกิจหลัก</a>
+            <a href="events.html" class="block text-white">กิจกรรม & ข่าวสาร</a>
+            <a href="contact.html" class="block text-white">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="bg-dark-bg text-white py-14 relative">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-3xl font-black uppercase mb-2">เกี่ยวกับสมาคม & คณะกรรมการบริหาร</h1>
+            <p class="text-xs text-gray-400">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร วาระการบริหารปี 2569 - 2571</p>
+        </div>
+    </section>
+
+    <!-- 1. คณะกรรมการสมาคมฯ (EXECUTIVE BOARD - 16 ท่าน) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-accent-green block mb-1">EXECUTIVE BOARD</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">รายชื่อคณะกรรมการสมาคมฯ</h2>
+            </div>
+
+            <!-- Grid ตารางรูปภาพคณะกรรมการ -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-20">
+                
+                <!-- ท่านที่ 1 (นายกสมาคมฯ) -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/01.jpg" alt="นางวารุณี เมฆอากาศ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=วารุณี+เมฆอากาศ&background=749c51&color=fff&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางวารุณี เมฆอากาศ</h3>
+                        <p class="text-xs font-extrabold text-accent-green">นายกสมาคมฯ</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 2 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/02.jpg" alt="นางสาวมัณฑนา วีระเดชะ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=มัณฑนา+วีระเดชะ&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางสาวมัณฑนา วีระเดชะ</h3>
+                        <p class="text-xs font-semibold text-gray-600">อุปนายกสมาคมฯ 1</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 3 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/03.jpg" alt="นางสาววิจิตรา ศรีเรืองพันธ์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=วิจิตรา+ศรีเรืองพันธ์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางสาววิจิตรา ศรีเรืองพันธ์</h3>
+                        <p class="text-xs font-semibold text-gray-600">อุปนายกสมาคมฯ 2</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 4 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/04.jpg" alt="นางสาวสุปราณี บุญลอง" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=สุปราณี+บุญลอง&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางสาวสุปราณี บุญลอง</h3>
+                        <p class="text-xs font-semibold text-gray-600">อุปนายกสมาคมฯ 3</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 5 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/05.jpg" alt="นางสาวจรรยา วัลลานนท์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=จรรยา+วัลลานนท์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางสาวจรรยา วัลลานนท์</h3>
+                        <p class="text-xs font-semibold text-gray-600">อุปนายกสมาคมฯ 4</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 6 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/06.jpg" alt="นายณัฐพงษ์ หม่องลำปาง" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ณัฐพงษ์+หม่องลำปาง&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นายณัฐพงษ์ หม่องลำปาง</h3>
+                        <p class="text-xs font-semibold text-accent-green">เลขานุการสมาคมฯ</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 7 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/07.jpg" alt="นางสาววินัสนันท์ ยศพัฐกรณ์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=วินัสนันท์+ยศพัฐกรณ์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางสาววินัสนันท์ ยศพัฐกรณ์</h3>
+                        <p class="text-xs text-gray-600">นายทะเบียน / ผู้ช่วยเลขานุการฯ</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 8 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/08.jpg" alt="นางสาวสุนันทา สมนึก" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=สุนันทา+สมนึก&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางสาวสุนันทา สมนึก</h3>
+                        <p class="text-xs text-gray-600">กรรมการเหรัญญิก</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 9 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/09.jpg" alt="นายพิโรดม จันทนะเสวี" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=พิโรดม+จันทนะเสวี&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นายพิโรดม จันทนะเสวี</h3>
+                        <p class="text-xs text-gray-600">กรรมการประชาสัมพันธ์</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 10 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/10.jpg" alt="นายธนาธิษณ์ ใจโต" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ธนาธิษณ์+ใจโต&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นายธนาธิษณ์ ใจโต</h3>
+                        <p class="text-xs text-gray-600">กรรมการประชาสัมพันธ์</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 11 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/11.jpg" alt="นายสรวิทย์ ปานพินิจ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=สรวิทย์+ปานพินิจ&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นายสรวิทย์ ปานพินิจ</h3>
+                        <p class="text-xs text-gray-600">กรรมการปฏิคม</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 12 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/12.jpg" alt="นางสาวฐัณฏ์ สกุลภักดี" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ฐัณฏ์+สกุลภักดี&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นางสาวฐัณฏ์ สกุลภักดี</h3>
+                        <p class="text-xs text-gray-600">กรรมการปฏิคม</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 13 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/13.jpg" alt="นายกฤตภาส ชุติวัตโภคิน" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=กฤตภาส+ชุติวัตโภคิน&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นายกฤตภาส ชุติวัตโภคิน</h3>
+                        <p class="text-xs text-gray-600">กรรมการ</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 14 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/14.jpg" alt="ว่าที่ร้อยตรีหญิงอภิรตา ประมาณ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=อภิรตา+ประมาณ&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">ว่าที่ร้อยตรีหญิงอภิรตา ประมาณ</h3>
+                        <p class="text-xs text-gray-600">กรรมการ</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 15 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/15.jpg" alt="นายสงวน สีธรรมใจ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=สงวน+สีธรรมใจ&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นายสงวน สีธรรมใจ</h3>
+                        <p class="text-xs text-gray-600">กรรมการ</p>
+                    </div>
+                </div>
+
+                <!-- ท่านที่ 16 -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/16.jpg" alt="นายจารุพงษ์ โสรสิงห์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=จารุพงษ์+โสรสิงห์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-1">นายจารุพงษ์ โสรสิงห์</h3>
+                        <p class="text-xs text-gray-600">กรรมการ</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2. ที่ปรึกษาสมาคมฯ (HONORARY ADVISORS - 15 ท่าน) -->
+            <div class="text-center max-w-2xl mx-auto mb-10 pt-8 border-t border-gray-200">
+                <span class="text-xs font-bold uppercase tracking-widest text-accent-green block mb-1">HONORARY ADVISORS</span>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-gray-900">ที่ปรึกษาสมาคมฯ</h3>
+            </div>
+
+            <!-- Grid ตารางรูปภาพที่ปรึกษา -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+                
+                <!-- ที่ปรึกษาท่านที่ 1 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/17.jpg" alt="นางวลีย์รัตน์ วิภาศรีนิมิต ไลนส์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=วลีย์รัตน์+วิภาศรีนิมิต&background=23441e&color=fff&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางวลีย์รัตน์ วิภาศรีนิมิต ไลนส์</h4>
+                        <p class="text-[11px] font-bold text-accent-green">ที่ปรึกษากิตติมศักดิ์</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 2 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/18.jpg" alt="นางพรเพ็ญ ชัยสิทธิพล" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=พรเพ็ญ+ชัยสิทธิพล&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางพรเพ็ญ ชัยสิทธิพล</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 3 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/19.jpg" alt="นางสาวพิมลกานต์ ศรีสุข" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=พิมลกานต์+ศรีสุข&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางสาวพิมลกานต์ ศรีสุข</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 4 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/20.jpg" alt="นางนวลศรี พรหมไชยวงศ์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=นวลศรี+พรหมไชยวงศ์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางนวลศรี พรหมไชยวงศ์</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 5 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/21.jpg" alt="นางลัดดา กลิ่นวงษ์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ลัดดา+กลิ่นวงษ์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางลัดดา กลิ่นวงษ์</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 6 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/22.jpg" alt="ดร.อนุกูล ศิริพันธ์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=อนุกูล+ศิริพันธ์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">ดร.อนุกูล ศิริพันธ์</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 7 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/23.jpg" alt="ดร.ภูม ศรีสุข" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ภูม+ศรีสุข&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">ดร.ภูม ศรีสุข</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 8 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/24.jpg" alt="ผศ.ดร.ศิลาวัฒน์ ชัยวงศ์" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ศิลาวัฒน์+ชัยวงศ์&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">ผศ.ดร.ศิลาวัฒน์ ชัยวงศ์</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 9 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/25.jpg" alt="นายชินพันธุ์ สว่างเนตร" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ชินพันธุ์+สว่างเนตร&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นายชินพันธุ์ สว่างเนตร</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 10 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/26.jpg" alt="นางระวีวรรณ ศรีเฟย" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ระวีวรรณ+ศรีเฟย&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางระวีวรรณ ศรีเฟย</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 11 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/27.jpg" alt="นางสาวธรินทร์ญา สนิทใจ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ธรินทร์ญา+สนิทใจ&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางสาวธรินทร์ญา สนิทใจ</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 12 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/28.jpg" alt="นางพัชนี สุริยะ" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=พัชนี+สุริยะ&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางพัชนี สุริยะ</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 13 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/29.jpg" alt="นางปาริชาติ ศรีเมือง" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ปาริชาติ+ศรีเมือง&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางปาริชาติ ศรีเมือง</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 14 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/30.jpg" alt="นางกมลวรรณ ปกแก้ว" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=กมลวรรณ+ปกแก้ว&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางกมลวรรณ ปกแก้ว</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+                <!-- ที่ปรึกษาท่านที่ 15 -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition text-center flex flex-col justify-between">
+                    <div class="bg-gray-200 aspect-[3/4] w-full overflow-hidden">
+                        <img src="images/about/31.jpg" alt="นางประกาย หะยีวะมิง" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=ประกาย+หะยีวะมิง&background=e5e7eb&color=374151&size=500';">
+                    </div>
+                    <div class="p-3 bg-white border-t border-gray-100 flex-grow flex flex-col justify-center">
+                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm mb-0.5">นางประกาย หะยีวะมิง</h4>
+                        <p class="text-[11px] text-gray-500">ที่ปรึกษา</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-accent-darkGreen text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10 text-xs">
+                <div>
+                    <h4 class="font-extrabold text-base mb-4 tracking-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</h4>
+                    <p class="text-gray-300 leading-relaxed">เลขที่ ๓๑๖ ม.๓ ต.ต้นธงชัย อำเภอเมืองลำปาง จังหวัดลำปาง ๕๒๐๐๐</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ลิงก์เมนูหลัก</h4>
+                    <ul class="space-y-2.5 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition">หน้าหลัก</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">เกี่ยวกับสมาคม</a></li>
+                        <li><a href="mission.html" class="hover:text-white transition">พันธกิจหลัก</a></li>
+                        <li><a href="events.html" class="hover:text-white transition">กิจกรรม & ข่าวสาร</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ช่องทางติดต่อ</h4>
+                    <p class="text-gray-300">โทรศัพท์: ๐๙๑-๔๙๙๒๒๙๔</p>
+                    <p class="text-gray-300 mt-2">ต.ต้นธงชัย อ.เมืองลำปาง จ.ลำปาง</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">นายกสมาคมฯ</h4>
+                    <p class="text-gray-300">นางวารุณี เมฆอากาศ</p>
+                    <p class="text-gray-400 text-[11px] mt-1">วาระปี 2569 - 2571</p>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-gray-400 text-[11px]">&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (M.N.B.A). สงวนลิขสิทธิ์ทุกประการ.</div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อเรา - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (M.N.B.A)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Sarabun & Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: {
+                            green: '#749c51',
+                            hover: '#618541',
+                            darkGreen: '#1b5e20',
+                            navGreen: '#1e7e34',
+                        },
+                        dark: {
+                            bg: '#181818',
+                            card: '#222222',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased selection:bg-accent-green selection:text-white">
+
+    <!-- 1. TOP HEADER & CONTACT BAR -->
+    <div class="w-full bg-white border-b border-gray-100 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="โลโก้สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร" class="w-10 h-10 object-contain rounded">
+                <div>
+                    <span class="text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
+                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Mueang Khelang Nakorn Business Tourism Assocication</span>
+                </div>
+            </a>
+
+            <div class="flex flex-wrap items-center gap-6 text-xs text-gray-600">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-accent-green"></i>
+                    <span>091-4992294</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-accent-green"></i>
+                    <span>ต.ต้นธงชัย อ.เมืองลำปาง 52000</span>
+                </div>
+                <a href="https://www.facebook.com/Lampangkhelangnakorn" target="_blank" rel="noopener noreferrer" class="bg-accent-green hover:bg-accent-hover text-white font-bold px-4 py-2 rounded text-xs transition uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-brands fa-facebook-f"></i> Facebook สมาคม
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MAIN NAVIGATION BAR -->
+    <nav class="w-full bg-accent-navGreen text-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gray-200 transition">หน้าหลัก</a>
+                <a href="about.html" class="hover:text-gray-200 transition">เกี่ยวกับสมาคม</a>
+                <a href="mission.html" class="hover:text-gray-200 transition">พันธกิจหลัก</a>
+                <a href="events.html" class="hover:text-gray-200 transition">กิจกรรม & ข่าวสาร</a>
+                <a href="contact.html" class="text-yellow-300 font-extrabold border-b-2 border-yellow-300 pb-0.5">ติดต่อเรา</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+
+            <div class="hidden md:block text-xs font-medium text-white/80">
+                สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-accent-darkGreen border-t border-white/10 px-6 py-4 space-y-3 text-xs font-semibold">
+            <a href="index.html" class="block text-white">หน้าหลัก</a>
+            <a href="about.html" class="block text-white">เกี่ยวกับสมาคม</a>
+            <a href="mission.html" class="block text-white">พันธกิจหลัก</a>
+            <a href="events.html" class="block text-white">กิจกรรม & ข่าวสาร</a>
+            <a href="contact.html" class="block text-yellow-300 font-bold">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <!-- 3. HERO BANNER SECTION -->
+    <section class="w-full bg-gray-600 text-white py-16 sm:py-24 text-center relative">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-300 block mb-2">Get In Touch</span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3">
+                ติดต่อเรา
+            </h1>
+            <p class="text-xs sm:text-sm text-gray-200 font-light max-w-xl mx-auto">
+                ยินดีต้อนรับสมาชิก ผู้ประกอบการ และประชาชนผู้สนใจ ติดต่อสอบถามข้อมูล สมัครสมาชิก หรือติดตามข่าวสารสมาคม
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. MAIN CONTACT SECTION -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- LEFT COLUMN: Contact Info -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-accent-green uppercase tracking-widest block mb-1">Contact Information</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">ช่องทางการติดต่อสมาคม</h2>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            สามารถติดต่อสอบถามข้อมูล ปรึกษาข้อราชการ/ธุรกิจท่องเที่ยว หรือติดตามข่าวสารกิจกรรมเคลื่อนไหวของสมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร ได้ตามช่องทางด้านล่างนี้
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Address -->
+                        <div class="p-5 rounded-lg border border-gray-100 bg-gray-50 flex items-start gap-4 shadow-sm">
+                            <div class="w-12 h-12 bg-accent-green/10 text-accent-green rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-900 uppercase mb-1">ที่อยู่สำนักงานใหญ่</h4>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                    สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร<br>
+                                    เลขที่ ๓๑๖ หมู่ ๓ ตำบลต้นธงชัย อำเภอเมืองลำปาง จังหวัดลำปาง ๕๒๐๐๐
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="p-5 rounded-lg border border-gray-100 bg-gray-50 flex items-start gap-4 shadow-sm">
+                            <div class="w-12 h-12 bg-accent-green/10 text-accent-green rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-900 uppercase mb-1">เบอร์โทรศัพท์ติดต่อ</h4>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-semibold text-gray-900">
+                                    ๐๙๑-๔๙๙๒๒๙๔ (091-499-2294)
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Facebook Page -->
+                        <div class="p-5 rounded-lg border border-blue-100 bg-blue-50/50 flex items-start gap-4 shadow-sm">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-blue-900 uppercase mb-1">Facebook Fanpage</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-2">
+                                    ติดตามกิจกรรม ข่าวสาร และส่งข้อความ inbox พูดคุยกับสมาคมฯ ได้ทางแฟนเพจ
+                                </p>
+                                <a href="https://www.facebook.com/Lampangkhelangnakorn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-blue-700 hover:text-blue-900 underline">
+                                    สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                            <!-- Leadership -->
+                        <div class="p-5 rounded-lg border border-gray-100 bg-gray-50 flex items-start gap-4 shadow-sm">
+                            <div class="w-12 h-12 bg-accent-green/10 text-accent-green rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-900 uppercase mb-1">ผู้บริหารสมาคมฯ</h4>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                    นางวารุณี เมฆอากาศ (นายกสมาคมฯ)<br>
+                                    <span class="text-xs text-gray-500">วาระการบริหารปี 2569 - 2571</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- it@email -->
+                        <div class="p-5 rounded-lg border border-blue-100 bg-blue-50/50 flex items-start gap-4 shadow-sm">
+                              <div>
+                                 <p class="text-xs text-gray-600 leading-relaxed mb-2">
+                                    ติดต่อทางอีเมล์ได้ที่ <E-Mail> it@mnba.or.th</E-Mail>
+                                 </p>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Map & Facebook Banner -->
+                <div class="lg:col-span-6 space-y-6">
+                    <!-- Facebook Page Banner Card -->
+                    <div class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-8 rounded-xl shadow-md flex flex-col justify-between min-h-[180px]">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fa-brands fa-facebook text-3xl"></i>
+                                <span class="text-xs font-bold tracking-widest uppercase text-blue-200">Official Facebook Page</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</h3>
+                            <p class="text-xs text-blue-100 leading-relaxed mb-6">
+                                กด Like & Follow เพื่อรับข้อมูลข่าวสารการท่องเที่ยว กิจกรรมฝึกอบรม และประกาศสำคัญจากสมาคมฯ
+                            </p>
+                        </div>
+                        <a href="https://www.facebook.com/Lampangkhelangnakorn" target="_blank" rel="noopener noreferrer" class="inline-block text-center bg-white text-blue-900 hover:bg-blue-50 font-bold text-xs py-3 px-6 rounded transition shadow">
+                            ไปยังหน้า Facebook Page <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Map Preview Box -->
+                    <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm relative bg-gray-200 h-[320px]">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6371.1216640237635!2d99.50433993259134!3d18.28826794006656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1790688862619!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER -->
+    <footer class="bg-accent-darkGreen text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10 text-xs">
+                <div>
+                    <h4 class="font-extrabold text-base mb-4 tracking-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</h4>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        ๓๑๖ ม.๓ ต.ต้นธงชัย อำเภอเมืองลำปาง จังหวัดลำปาง ๕๒๐๐๐
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ลิงก์เมนูหลัก</h4>
+                    <ul class="space-y-2.5 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition">หน้าหลัก</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">เกี่ยวกับสมาคม</a></li>
+                        <li><a href="mission.html" class="hover:text-white transition">พันธกิจหลัก</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ช่องทางติดต่อ</h4>
+                    <p class="text-gray-300">โทรศัพท์: ๐๙๑-๔๙๙๒๒๙๔</p>
+                    <p class="text-gray-300 mt-2">ต.ต้นธงชัย อ.เมืองลำปาง จ.ลำปาง</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ติดตามเรา</h4>
+                    <a href="https://www.facebook.com/Lampangkhelangnakorn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded text-xs transition">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook Page
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-gray-400 text-[11px]">
+                &copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (M.N.B.A). สงวนลิขสิทธิ์ทุกประการ.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
