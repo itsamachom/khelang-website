@@ -5,15 +5,6 @@ backend:
   base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/  # URL Worker ของคุณ
   auth_endpoint: /auth
 
-site_url: "https://khelang-website-active.pages.dev"  # URL เว็บไซต์หลักของคุณ
-
-backend:
-  name: github
-  repo: itsamachom/khelang-website
-  branch: main
-  base_url: https://khelang-cms-auth.super-poetry-60ea.workers.dev/  # URL Worker ของคุณ
-  auth_endpoint: /auth
-
 site_url: "https://khelang-website.pages.dev/"  # ใส่ URL หน้าเว็บจริงของคุณ
 
 # กำหนดโฟลเดอร์รูปภาพระดับ Global (ระบุ / นำหน้าใน public_folder)
