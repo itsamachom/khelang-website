@@ -50,7 +50,7 @@
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
-                <a href="index.html" class="text-gray-900 hover:text-accent-green transition">หน้าหลัก</a>
+                <a href="index.html" class="text-gray-900 font-bold hover:text-accent-green transition">หน้าหลัก</a>
                 <a href="about.html" class="hover:text-accent-green transition">เกี่ยวกับสมาคม</a>
                 <a href="mission.html" class="hover:text-accent-green transition">พันธกิจหลัก</a>
                 <a href="events.html" class="hover:text-accent-green transition">กิจกรรม & ข่าวสาร</a>
@@ -183,7 +183,7 @@
         </div>
     </section>
 
-    <!-- 5. RECENT ACTIVITIES & NEWS SECTION (3 ข่าวแรก เชื่อมต่อไปยัง activity-detail.html) -->
+    <!-- 5. RECENT ACTIVITIES & NEWS SECTION ( dynamic fetch via GitHub API ) -->
     <section class="py-16 bg-gray-50/50 border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -199,55 +199,11 @@
                 </a>
             </div>
 
-            <!-- Grid 3 ข่าวแรก -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Activity 1 -->
-                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <img src="images/2569-08-15/2569-08-15 (25).jpg" alt="ประชุมใหญ่สามัญประจำปี" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80'">
-                        <div class="p-5">
-                            <span class="text-[10px] bg-accent-green text-white font-bold px-2.5 py-1 rounded">15 สิงหาคม 2569</span>
-                            <h3 class="font-bold text-gray-900 text-base mt-3 mb-2">ประชุมใหญ่สามัญประจำปี & พิธีส่งมอบหน้าที่นายกสมาคมฯ</h3>
-                            <p class="text-xs text-gray-600 leading-relaxed mb-4">จัด ณ วิทยาลัยอินเตอร์เทคลำปาง พิธีส่งมอบหน้าที่จาก นางวลีย์รัตน์ วิภาศรีนิมิต ไลนส์ ให้แก่ นางวารุณี เมฆอากาศ นายกสมาคมฯ ท่านใหม่ พร้อมเสวนา "ทิศทางการท่องเที่ยวลำปาง ปี 2570"</p>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <a href="activity-detail.html?id=2026-08-15-activity-1" class="inline-block bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-4 py-2 rounded transition">อ่านรายละเอียดกิจกรรม →</a>
-                    </div>
-                </div>
-
-                <!-- Activity 2 -->
-                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <img src="images/2569-08-25/2569-08-25 (5).jpg" alt="ประกวดภาพถ่ายแข่งเรือพาย" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80'">
-                        <div class="p-5">
-                            <span class="text-[10px] bg-accent-green text-white font-bold px-2.5 py-1 rounded">25 สิงหาคม 2569</span>
-                            <h3 class="font-bold text-gray-900 text-base mt-3 mb-2">ประกวดภาพถ่ายงานแข่งเรือพาย เทศบาลนครลำปาง</h3>
-                            <p class="text-xs text-gray-600 leading-relaxed mb-4">ร่วมกับเทศบาลนครลำปาง และชมรมช่างภาพจังหวัดลำปาง จัดประกวดภาพถ่ายในหัวข้อ "มนต์เสน่ห์แห่งน้ำวัง การแข่งขันเรือพายอันยิ่งใหญ่แห่งนครลำปาง"</p>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <a href="activity-detail.html?id=2026-08-25-activity-2" class="inline-block bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-4 py-2 rounded transition">อ่านรายละเอียดกิจกรรม →</a>
-                    </div>
-                </div>
-
-                <!-- Activity 3 -->
-                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <img src="images/2569-08-31/2569-08-31 (1).jpg" alt="D-HOPE บ้านปางมะโอ" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80'">
-                        <div class="p-5">
-                            <span class="text-[10px] bg-accent-green text-white font-bold px-2.5 py-1 rounded">31 สิงหาคม 2569</span>
-                            <h3 class="font-bold text-gray-900 text-base mt-3 mb-2">โครงการส่งเสริมการเรียนรู้ D-HOPE ชุมชนบ้านปางมะโอ</h3>
-                            <p class="text-xs text-gray-600 leading-relaxed mb-4">สมาคมฯ ร่วมพิธีเปิดโครงการจัดกิจกรรมส่งเสริมการเรียนรู้ที่นักท่องเที่ยวลงมือปฏิบัติ (D-HOPE) ณ ชุมชนท่องเที่ยว OTOP นวัตวิถีบ้านปางมะโอ อ.แม่ทะ จ.ลำปาง</p>
-                        </div>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <a href="activity-detail.html?id=2026-08-31-activity-3" class="inline-block bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-4 py-2 rounded transition">อ่านรายละเอียดกิจกรรม →</a>
-                    </div>
-                </div>
-
+            <!-- Grid Container สำหรับใส่ 3 ข่าวล่าสุดแบบ Dynamic -->
+            <div id="recent-events-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- ข้อมูลกิจกรรมจะโหลดมาตรงนี้อัตโนมัติ -->
             </div>
+            
         </div>
     </section>
 
@@ -350,6 +306,69 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+    </script>
+
+    <!-- Script ดึงข้อมูลกิจกรรม 3 รายการล่าสุดจาก GitHub API -->
+    <script>
+        async function loadRecentEvents() {
+            const container = document.getElementById('recent-events-container');
+            container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10"><i class="fa-solid fa-spinner fa-spin mr-2"></i> กำลังโหลดข้อมูลกิจกรรม...</p>';
+
+            try {
+                // ดึงรายชื่อไฟล์จากโฟลเดอร์ content/events ใน GitHub Repository
+                const repoUrl = 'https://api.github.com/repos/itsamachom/khelang-website/contents/content/events';
+                const response = await fetch(repoUrl);
+                if (!response.ok) throw new Error('ไม่สามารถเชื่อมต่อฐานข้อมูลได้');
+                const files = await response.json();
+
+                // กรองเฉพาะไฟล์ .json หรือ .md และเรียงตามลำดับชื่อไฟล์ (วันที่) ใหม่ไปเก่า แล้วเลือก 3 อันแรก
+                const validFiles = files.filter(file => file.name.endsWith('.json') || file.name.endsWith('.md'))
+                                         .sort((a, b) => b.name.localeCompare(a.name))
+                                         .slice(0, 3); 
+
+                if (validFiles.length === 0) {
+                    container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10">ยังไม่มีกิจกรรมในขณะนี้</p>';
+                    return;
+                }
+
+                container.innerHTML = '';
+
+                for (const file of validFiles) {
+                    const eventRes = await fetch(file.download_url);
+                    let title = '', dateStr = '', summary = '', imageUrl = '';
+
+                    if (file.name.endsWith('.json')) {
+                        const eventData = await eventRes.json();
+                        title = eventData.title || 'กิจกรรมสมาคม';
+                        dateStr = eventData.date ? new Date(eventData.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
+                        summary = eventData.summary || '';
+                        imageUrl = eventData.thumbnail || eventData.image || 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';
+                    }
+
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition';
+                    card.innerHTML = `
+                        <div>
+                            <img src="${imageUrl}" alt="${title}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80'">
+                            <div class="p-5">
+                                <span class="text-[10px] bg-accent-green text-white font-bold px-2.5 py-1 rounded">${dateStr}</span>
+                                <h3 class="font-bold text-gray-900 text-base mt-3 mb-2">${title}</h3>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-4 line-clamp-3">${summary}</p>
+                            </div>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <a href="activity-detail.html?file=${file.name}" class="inline-block bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-4 py-2 rounded transition">อ่านรายละเอียดกิจกรรม →</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                container.innerHTML = '<p class="text-center text-red-500 col-span-3 py-10">ขออภัย ไม่สามารถโหลดข้อมูลกิจกรรมได้ในขณะนี้</p>';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadRecentEvents);
     </script>
 </body>
 </html>
