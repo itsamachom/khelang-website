@@ -4,345 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (M.N.B.A)</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Sarabun & Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        accent: {
-                            green: '#749c51',
-                            hover: '#618541',
-                            darkGreen: '#23441e',
-                        },
-                        dark: {
-                            bg: '#181818',
-                            card: '#222222',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'],
-                    }
+                    colors: { accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e' }, dark: { bg: '#181818' } },
+                    fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased selection:bg-accent-green selection:text-white">
+<body class="bg-white text-gray-800 font-sans antialiased">
 
-    <!-- 1. HEADER & NAVIGATION -->
+    <!-- HEADER -->
     <header class="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
             <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.png" alt="โลโก้สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร" class="w-10 h-10 object-contain rounded">
+                <img src="logo.png" alt="โลโก้สมาคม" class="w-10 h-10 object-contain rounded">
                 <div>
-                    <span class="text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
-                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Mueang Khelang Nakorn Business Tourism Assocication</span>
+                    <span class="text-lg font-extrabold text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
+                    <span class="text-[10px] uppercase font-bold text-gray-400">Mueang Khelang Nakorn Business Tourism Association</span>
                 </div>
             </a>
-
-            <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
-                <a href="index.html" class="text-gray-900 font-bold hover:text-accent-green transition">หน้าหลัก</a>
-                <a href="about.html" class="hover:text-accent-green transition">เกี่ยวกับสมาคม</a>
-                <a href="mission.html" class="hover:text-accent-green transition">พันธกิจหลัก</a>
-                <a href="events.html" class="hover:text-accent-green transition">กิจกรรม & ข่าวสาร</a>
-                <a href="contact.html" class="hover:text-accent-green transition">ติดต่อเรา</a>
+                <a href="index.html" class="text-gray-900 font-bold hover:text-accent-green">หน้าหลัก</a>
+                <a href="about.html" class="hover:text-accent-green">เกี่ยวกับสมาคม</a>
+                <a href="mission.html" class="hover:text-accent-green">พันธกิจหลัก</a>
+                <a href="events.html" class="hover:text-accent-green">กิจกรรม & ข่าวสาร</a>
+                <a href="contact.html" class="hover:text-accent-green">ติดต่อเรา</a>
             </nav>
-
-            <!-- Search & Mobile Button -->
-            <div class="flex items-center gap-4">
-                <button class="p-2 text-gray-600 hover:text-gray-900 transition" aria-label="Search">
-                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                </button>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600" aria-label="Toggle Menu">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b px-6 py-4 space-y-3 text-sm font-medium">
-            <a href="index.html" class="block text-accent-green font-bold">หน้าหลัก</a>
-            <a href="about.html" class="block text-gray-600 hover:text-accent-green">เกี่ยวกับสมาคม</a>
-            <a href="mission.html" class="block text-gray-600 hover:text-accent-green">พันธกิจหลัก</a>
-            <a href="events.html" class="block text-gray-600 hover:text-accent-green">กิจกรรม & ข่าวสาร</a>
-            <a href="contact.html" class="block text-gray-600 hover:text-accent-green">ติดต่อเรา</a>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
+    <!-- HERO SECTION -->
     <section class="w-full bg-white py-6 lg:py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[480px]">
-                
-                <!-- Left Dark Container -->
                 <div class="lg:col-span-8 bg-dark-bg text-white p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
-                    <span class="text-xs uppercase tracking-widest font-bold text-accent-green mb-4 block">
-                        สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (วาระปี 2569 - 2571)
-                    </span>
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-relaxed sm:leading-relaxed lg:leading-relaxed mb-6">
-                        "บูรณาการนวัตกรรมและทุนทางวัฒนธรรม เพื่อขับเคลื่อนลำปางสู่เมืองท่องเที่ยวเชิงสร้างสรรค์อย่างยั่งยืน"
-                    </h1>
-                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-2xl mb-8">
-                        นำโดย <span class="font-bold text-white">นางวารุณี เมฆอากาศ</span> นายกสมาคมฯ มุ่งกระจายรายได้สู่ชุมชนฐานราก ภายใต้หลักธรรมาภิบาล และความร่วมมืออย่างไร้รอยต่อ
-                    </p>
-                    <div>
-                        <a href="about.html" class="inline-block bg-accent-green hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded transition shadow-md">
-                            รู้จักสมาคม & คณะกรรมการ
-                        </a>
-                    </div>
+                    <span class="text-xs uppercase tracking-widest font-bold text-accent-green mb-4 block">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
+                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase leading-relaxed mb-6">"บูรณาการนวัตกรรมและทุนทางวัฒนธรรม เพื่อขับเคลื่อนลำปางสู่เมืองท่องเที่ยวเชิงสร้างสรรค์อย่างยั่งยืน"</h1>
+                    <div><a href="about.html" class="inline-block bg-accent-green text-white text-xs font-bold px-8 py-3.5 rounded">รู้จักสมาคม & คณะกรรมการ</a></div>
                 </div>
-
-                <!-- Right Hero Image -->
-                <div class="lg:col-span-4 bg-gray-300 min-h-[280px] lg:min-h-full flex items-center justify-center relative overflow-hidden">
+                <div class="lg:col-span-4 bg-gray-300 min-h-[280px] lg:min-h-full relative overflow-hidden">
                     <img src="images/master.jpg" alt="Lampang Tourism" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/10"></div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- 3. ABOUT & INTRO SECTION -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Left Heading -->
-                <div class="lg:col-span-6">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-2">
-                        วัตถุประสงค์ & พันธกิจ
-                    </span>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 leading-snug">
-                        ส่งเสริมแหล่งท่องเที่ยว ยกระดับคุณภาพบริการ และสร้างเครือข่ายที่เข้มแข็ง
-                    </h2>
-                </div>
-
-                <!-- Right Description -->
-                <div class="lg:col-span-6 space-y-6">
-                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                        สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร จัดตั้งขึ้นโดยมีวัตถุประสงค์เพื่อส่งเสริมการท่องเที่ยวในจังหวัดลำปาง ทำหน้าที่ประสานความร่วมมือระหว่างสมาชิก องค์กรเอกชน และหน่วยงานราชการ เพื่อการพัฒนาการท่องเที่ยวที่ยั่งยืน
-                    </p>
-                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                        มุ่งเน้นการสร้างคุณค่าทางอุตสาหกรรมท่องเที่ยว การอบรมพัฒนาบุคลากร การอนุรักษ์ทรัพยากรธรรมชาติ และกระจายรายได้สู่ผู้ประกอบการชุมชนในท้องถิ่น
-                    </p>
-
-                    <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <a href="mission.html" class="bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-6 py-3 rounded transition">
-                            อ่านวัตถุประสงค์เต็ม
-                        </a>
-                        <a href="about.html" class="border border-gray-300 hover:border-gray-900 text-gray-800 text-xs font-bold px-6 py-3 rounded transition">
-                            โครงสร้างกรรมการ
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. NETWORK & FEATURE BANNER -->
-    <section class="py-16 bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-8">
-                ขับเคลื่อนด้วยเครือข่ายผู้ประกอบการตัวจริง
-            </h2>
-
-            <!-- Large Center Image Box -->
-            <div class="w-full h-64 sm:h-96 bg-gray-200 mb-8 rounded overflow-hidden relative shadow-sm">
-                <img src="images/cover02.jpg" alt="เครือข่ายผู้ประกอบการ" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Paragraph Description -->
-            <p class="text-xs sm:text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
-                สมาคมเป็นศูนย์กลางการติดต่อสื่อสารและประสานงาน ให้คำแนะนำปรึกษาแก่สมาชิก ตลอดจนเสนอแนะข้อคิดเห็นต่อหน่วยงานภาครัฐ เพื่อร่วมกันกำหนดทิศทางพัฒนาการท่องเที่ยวเมืองลำปาง
-            </p>
-
-            <!-- Stats Inline -->
-            <div class="text-xs sm:text-sm font-semibold text-gray-700 flex flex-wrap justify-center items-center gap-3 mb-8">
-                <span>ผู้ประกอบการเครือข่าย 150+ ราย</span>
-                <span class="text-gray-300">|</span>
-                <span>ประสบการณ์ทำงาน 5+ ปี</span>
-                <span class="text-gray-300">|</span>
-                <span>จดทะเบียนถูกต้องตามกฎหมาย ๓/๒๕๖๓</span>
-            </div>
-
-            <a href="about.html" class="inline-block bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-8 py-3 rounded transition">
-                เกี่ยวกับเราเพิ่มเติม
-            </a>
-
-        </div>
-    </section>
-
-    <!-- 5. RECENT ACTIVITIES & NEWS SECTION ( dynamic fetch via GitHub API ) -->
+    <!-- RECENT ACTIVITIES SECTION (6 ITEMS) -->
     <section class="py-16 bg-gray-50/50 border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
             <div class="flex justify-between items-center mb-10">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-1">
-                        อัปเดตล่าสุด
-                    </span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-1">อัปเดตล่าสุด</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">กิจกรรม & ข่าวสารสมาคม</h2>
                 </div>
-                <a href="events.html" class="bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-5 py-2.5 rounded transition inline-flex items-center gap-2">
-                    ดูกิจกรรมทั้งหมด <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </a>
+                <a href="events.html" class="bg-accent-green text-white text-xs font-bold px-5 py-2.5 rounded">ดูกิจกรรมทั้งหมด →</a>
             </div>
 
-            <!-- Grid Container สำหรับใส่ 3 ข่าวล่าสุดแบบ Dynamic -->
-            <div id="recent-events-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- ข้อมูลกิจกรรมจะโหลดมาตรงนี้อัตโนมัติ -->
-            </div>
-            
+            <!-- CONTAINER FOR 6 EVENTS -->
+            <div id="recent-events-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
-    <!-- 6. CONTACT BANNER SECTION -->
-    <section class="py-16 bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 sm:p-12">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <div class="lg:col-span-8 space-y-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-accent-green block">
-                            ติดต่อสอบถาม & ร่วมเป็นเครือข่าย
-                        </span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
-                            ต้องการข้อมูลเพิ่มเติม หรือ สมัครสมาชิกสมาคมฯ?
-                        </h2>
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร ยินดีต้อนรับผู้ประกอบการ และผู้สนใจร่วมขับเคลื่อนเศรษฐกิจการท่องเที่ยวจังหวัดลำปาง สามารถเข้าชมข้อมูลการติดต่อ เบอร์โทรศัพท์ และที่ตั้งสมาคมฯ ได้ที่หน้าติดต่อเรา
-                        </p>
-                        <div class="flex flex-wrap items-center gap-6 pt-2 text-xs text-gray-700 font-medium">
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-phone text-accent-green"></i>
-                                <span>091-499-2294</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-location-dot text-accent-green"></i>
-                                <span>316 ม.3 ต.ต้นธงชัย อ.เมืองลำปาง 52000</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-4 flex justify-start lg:justify-end">
-                        <a href="contact.html" class="w-full sm:w-auto text-center bg-accent-green hover:bg-accent-hover text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-lg transition shadow-md inline-flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-envelope"></i> ไปยังหน้าติดต่อเรา
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. FOOTER -->
-    <footer class="bg-accent-darkGreen text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10 text-xs">
-                
-                <div>
-                    <h4 class="font-extrabold text-base mb-4 tracking-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</h4>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        องค์กรไม่แสวงหากำไร จดทะเบียนถูกต้องตามกฎหมาย เลขที่ ๓/๒๕๖๓ มุ่งมั่นพัฒนาเครือข่ายท่องเที่ยวลำปาง
-                    </p>
-                    <p class="text-gray-300">
-                        เลขผู้เสียภาษี: 099-3-00043289-4
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-sm mb-4">ลิงก์เมนูหลัก</h4>
-                    <ul class="space-y-2.5 text-gray-300">
-                        <li><a href="index.html" class="hover:text-white transition">หน้าหลัก</a></li>
-                        <li><a href="about.html" class="hover:text-white transition">เกี่ยวกับสมาคม</a></li>
-                        <li><a href="mission.html" class="hover:text-white transition">พันธกิจหลัก</a></li>
-                        <li><a href="events.html" class="hover:text-white transition">กิจกรรม & ข่าวสาร</a></li>
-                        <li><a href="contact.html" class="hover:text-white transition">ติดต่อเรา</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-sm mb-4">ช่องทางติดต่อ</h4>
-                    <p class="text-gray-300 mb-2">โทรศัพท์: ๐๙๑-๔๙๙๒๒๙๔</p>
-                    <p class="text-gray-300 leading-relaxed">๓๑๖ ม.๓ ต.ต้นธงชัย อำเภอเมืองลำปาง จังหวัดลำปาง ๕๒٠๐๐</p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-sm mb-4">ติดตามเรา</h4>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        ติดตามข่าวสารและกิจกรรมเคลื่อนไหวของสมาคมฯ ผ่าน Facebook Fanpage
-                    </p>
-                    <a href="https://www.facebook.com/Lampangkhelangnakorn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 rounded text-xs transition">
-                        <i class="fa-brands fa-facebook-f text-blue-400"></i> Facebook Page
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="pt-8 text-center text-gray-400 text-[11px]">
-                &copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (M.N.B.A). สงวนลิขสิทธิ์ทุกประการ.
-            </div>
-
-        </div>
+    <!-- FOOTER -->
+    <footer class="bg-accent-darkGreen text-white py-8 text-center text-xs">
+        <p>&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร. สงวนลิขสิทธิ์ทุกประการ.</p>
     </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-
-    <!-- Script ดึงข้อมูลกิจกรรม 3 รายการล่าสุดจาก GitHub API -->
+    <!-- SCRIPT FETCH 6 EVENTS -->
     <script>
         async function loadRecentEvents() {
             const container = document.getElementById('recent-events-container');
-            container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10"><i class="fa-solid fa-spinner fa-spin mr-2"></i> กำลังโหลดข้อมูลกิจกรรม...</p>';
+            container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10"><i class="fa-solid fa-spinner fa-spin mr-2"></i> กำลังโหลดกิจกรรม...</p>';
 
             try {
-                // ดึงรายชื่อไฟล์จากโฟลเดอร์ content/events ใน GitHub Repository
                 const repoUrl = 'https://api.github.com/repos/itsamachom/khelang-website/contents/content/events';
                 const response = await fetch(repoUrl);
-                if (!response.ok) throw new Error('ไม่สามารถเชื่อมต่อฐานข้อมูลได้');
+                if (!response.ok) throw new Error('ไม่สามารถดึงข้อมูลได้');
                 const files = await response.json();
 
-                // กรองเฉพาะไฟล์ .json หรือ .md และเรียงตามลำดับชื่อไฟล์ (วันที่) ใหม่ไปเก่า แล้วเลือก 3 อันแรก
-                const validFiles = files.filter(file => file.name.endsWith('.json') || file.name.endsWith('.md'))
+                const validFiles = files.filter(f => f.name.endsWith('.json') || f.name.endsWith('.md'))
                                          .sort((a, b) => b.name.localeCompare(a.name))
-                                         .slice(0, 6); 
+                                         .slice(0, 6);
 
                 if (validFiles.length === 0) {
-                    container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10">ยังไม่มีกิจกรรมในขณะนี้</p>';
+                    container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10">ยังไม่มีรายการกิจกรรม</p>';
                     return;
                 }
 
                 container.innerHTML = '';
 
                 for (const file of validFiles) {
-                    const eventRes = await fetch(file.download_url);
+                    const res = await fetch(file.download_url);
                     let title = '', dateStr = '', summary = '', imageUrl = '';
 
                     if (file.name.endsWith('.json')) {
-                        const eventData = await eventRes.json();
-                        title = eventData.title || 'กิจกรรมสมาคม';
-                        dateStr = eventData.date ? new Date(eventData.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
-                        summary = eventData.summary || '';
-                        imageUrl = eventData.thumbnail || eventData.image || 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';
+                        const data = await res.json();
+                        title = data.title || 'กิจกรรมสมาคม';
+                        dateStr = data.date ? new Date(data.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
+                        summary = data.summary || '';
+                        imageUrl = data.thumbnail || 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';
                     }
 
                     const card = document.createElement('div');
@@ -357,17 +124,16 @@
                             </div>
                         </div>
                         <div class="p-5 pt-0">
-                            <a href="activity-detail.html?file=${file.name}" class="inline-block bg-accent-green hover:bg-accent-hover text-white text-xs font-bold px-4 py-2 rounded transition">อ่านรายละเอียดกิจกรรม →</a>
+                            <a href="activity-detail.html?file=${file.name}" class="inline-block bg-accent-green text-white text-xs font-bold px-4 py-2 rounded">อ่านรายละเอียดกิจกรรม →</a>
                         </div>
                     `;
                     container.appendChild(card);
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                container.innerHTML = '<p class="text-center text-red-500 col-span-3 py-10">ขออภัย ไม่สามารถโหลดข้อมูลกิจกรรมได้ในขณะนี้</p>';
+            } catch (err) {
+                console.error(err);
+                container.innerHTML = '<p class="text-center text-red-500 col-span-3 py-10">ไม่สามารถโหลดข้อมูลได้</p>';
             }
         }
-        
         document.addEventListener('DOMContentLoaded', loadRecentEvents);
     </script>
 </body>
