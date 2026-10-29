@@ -18,6 +18,8 @@ collections:
     description: "เพิ่มรูปปกและเรื่องย่อสำหรับการ์ด แล้วกรอกรายละเอียดและแกลเลอรี หลังเผยแพร่ รอ Cloudflare อัปเดตเว็บไซต์สักครู่"
     folder: content/events
     create: true
+    media_folder: "/images/events/{{media_key}}"
+    public_folder: "/images/events/{{media_key}}"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     format: json
     extension: json
@@ -31,11 +33,12 @@ collections:
     editor:
       preview: true
     fields:
+      - {label: "การจัดเก็บรูปภาพ", name: media_key, widget: event-folder}
       - {label: "1. ชื่อกิจกรรม", name: title, widget: string, hint: "ใช้ชื่อที่สั้นและสื่อความหมาย จะแสดงบนการ์ดและหน้ารายละเอียด"}
       - {label: "2. วันที่จัดกิจกรรม", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, hint: "เว็บไซต์เรียงกิจกรรมจากวันที่ล่าสุด หน้าแรกแสดง 6 รายการ"}
       - {label: "เวลา", name: time, widget: string, required: false, hint: "เช่น 09.00–12.00 น."}
       - {label: "สถานที่", name: location, widget: string, required: false, hint: "ชื่อสถานที่หรือจังหวัด"}
-      - {label: "3. รูปปกกิจกรรม", name: thumbnail, widget: image, hint: "แนะนำภาพแนวนอน ภาพนี้แสดงบนหน้าแรกและหน้ารวมกิจกรรม", media_library: {config: {multiple: false}}}
+      - {label: "3. รูปปกกิจกรรม", name: thumbnail, widget: event-image, hint: "แนะนำภาพแนวนอน ภาพนี้แสดงบนหน้าแรกและหน้ารวมกิจกรรม", media_library: {config: {multiple: false}}}
       - {label: "4. เรื่องย่อบนการ์ด", name: summary, widget: text, hint: "สรุป 2–3 ประโยค เพื่อให้ผู้อ่านเข้าใจก่อนกดอ่านต่อ"}
       - {label: "5. รายละเอียดกิจกรรม", name: body, widget: markdown, hint: "เขียนเนื้อหา แบ่งย่อหน้า และใส่หัวข้อได้ ตรวจตัวอย่างทางขวาก่อนเผยแพร่"}
       - label: "6. ภาพบรรยากาศเพิ่มเติม"
@@ -43,5 +46,5 @@ collections:
         widget: list
         required: false
         collapsed: true
-        hint: "กดเพิ่มเพื่อเลือกรูปทีละภาพ รูปปกไม่จำเป็นต้องใส่ซ้ำ"
-        field: {label: "รูปภาพ", name: image, widget: image}
+        hint: "กดเพิ่มเพื่อเลือกรูปทีละภาพ ระบบย่อและตั้งชื่อก่อนบันทึก รูปปกไม่จำเป็นต้องใส่ซ้ำ"
+        field: {label: "รูปภาพ", name: image, widget: event-image}
