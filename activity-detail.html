@@ -7,13 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
     <script>
         tailwind.config = {
             theme: { extend: { colors: { accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e', navGreen: '#1e7e34' } }, fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] } } }
         }
     </script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.7/dist/purify.min.js"></script>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased">
 
@@ -73,96 +73,6 @@
         <p>&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร. สงวนลิขสิทธิ์ทุกประการ.</p>
     </footer>
 
-    <script>
-        async function loadEventDetail() {
-            const urlParams = new URLSearchParams(window.location.search);
-            let rawParam = urlParams.get('file') || urlParams.get('id');
-
-            if (!rawParam) {
-                window.location.href = 'events.html';
-                return;
-            }
-
-            try {
-                let targetFile = rawParam;
-                let response = await fetch(`content/events/${targetFile}`);
-                
-                if (!response.ok && !targetFile.endsWith('.json') && !targetFile.endsWith('.md')) {
-                    response = await fetch(`content/events/${targetFile}.json`);
-                    if (response.ok) targetFile = `${targetFile}.json`;
-                    else {
-                        response = await fetch(`content/events/${targetFile}.md`);
-                        if (response.ok) targetFile = `${targetFile}.md`;
-                    }
-                }
-
-                if (!response.ok) throw new Error('ไม่พบไฟล์กิจกรรม');
-
-                let title = '', dateStr = '', location = 'จังหวัดลำปาง', thumbnail = '', bodyContent = '', gallery = [];
-
-                if (targetFile.endsWith('.json')) {
-                    const data = await response.json();
-                    title = data.title || 'กิจกรรมสมาคม';
-                    dateStr = data.date ? new Date(data.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
-                    location = data.location || 'จังหวัดลำปาง';
-                    thumbnail = data.thumbnail || '';
-                    bodyContent = data.body ? marked.parse(data.body) : (data.summary || '');
-                    gallery = data.gallery || [];
-                } else {
-                    const fileContent = await response.text();
-                    const parts = fileContent.split(/^---\r?$/m);
-                    if (parts.length >= 3) {
-                        const frontmatter = jsyaml.load(parts[1]);
-                        title = frontmatter.title || 'กิจกรรมสมาคม';
-                        dateStr = frontmatter.date || '-';
-                        location = frontmatter.location || 'จังหวัดลำปาง';
-                        thumbnail = frontmatter.image || frontmatter.thumbnail || '';
-                        bodyContent = marked.parse(parts.slice(2).join('---'));
-                        gallery = frontmatter.gallery || [];
-                    }
-                }
-
-                document.title = `${title} - สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร`;
-                document.getElementById('event-title').innerText = title;
-                document.getElementById('event-date').innerText = dateStr;
-                document.getElementById('event-location').innerText = location;
-
-                if (thumbnail) {
-                    const coverImg = document.getElementById('event-cover');
-                    coverImg.src = thumbnail;
-                    coverImg.classList.remove('hidden');
-                }
-
-                document.getElementById('event-body').innerHTML = bodyContent;
-
-                if (Array.isArray(gallery) && gallery.length > 0) {
-                    const gallerySection = document.getElementById('gallery-section');
-                    const galleryContainer = document.getElementById('event-gallery');
-                    gallerySection.classList.remove('hidden');
-                    
-                    galleryContainer.innerHTML = gallery.map(item => {
-                        const imgPath = typeof item === 'string' ? item : (item.image || item.url || '');
-                        if (!imgPath) return '';
-                        return `
-                            <div class="overflow-hidden rounded-lg shadow-sm border border-gray-100">
-                                <img src="${imgPath}" alt="ภาพกิจกรรม" class="w-full h-48 object-cover" onerror="this.parentElement.style.display='none'">
-                            </div>
-                        `;
-                    }).join('');
-                }
-
-            } catch (err) {
-                console.error(err);
-                document.getElementById('event-content').innerHTML = `
-                    <div class="text-center py-16">
-                        <i class="fa-solid fa-circle-exclamation text-red-500 text-4xl mb-4"></i>
-                        <p class="text-gray-800 font-bold mb-4">ไม่พบเนื้อหาข่าวสารที่ต้องการ</p>
-                        <a href="events.html" class="bg-accent-green text-white px-5 py-2 rounded text-xs font-bold">ย้อนกลับไปหน้ารวมกิจกรรม</a>
-                    </div>
-                `;
-            }
-        }
-        document.addEventListener('DOMContentLoaded', loadEventDetail);
-    </script>
+    <script src="/js/events.js" defer></script>
 </body>
 </html>

@@ -78,63 +78,6 @@
     </footer>
 
     <!-- SCRIPT FETCH 6 EVENTS -->
-    <script>
-        async function loadRecentEvents() {
-            const container = document.getElementById('recent-events-container');
-            container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10"><i class="fa-solid fa-spinner fa-spin mr-2"></i> กำลังโหลดกิจกรรม...</p>';
-
-            try {
-                const repoUrl = 'https://api.github.com/repos/itsamachom/khelang-website/contents/content/events';
-                const response = await fetch(repoUrl);
-                if (!response.ok) throw new Error('ไม่สามารถดึงข้อมูลได้');
-                const files = await response.json();
-
-                const validFiles = files.filter(f => f.name.endsWith('.json') || f.name.endsWith('.md'))
-                                         .sort((a, b) => b.name.localeCompare(a.name))
-                                         .slice(0, 6);
-
-                if (validFiles.length === 0) {
-                    container.innerHTML = '<p class="text-center text-gray-500 col-span-3 py-10">ยังไม่มีรายการกิจกรรม</p>';
-                    return;
-                }
-
-                container.innerHTML = '';
-
-                for (const file of validFiles) {
-                    const res = await fetch(file.download_url);
-                    let title = '', dateStr = '', summary = '', imageUrl = '';
-
-                    if (file.name.endsWith('.json')) {
-                        const data = await res.json();
-                        title = data.title || 'กิจกรรมสมาคม';
-                        dateStr = data.date ? new Date(data.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
-                        summary = data.summary || '';
-                        imageUrl = data.thumbnail || 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';
-                    }
-
-                    const card = document.createElement('div');
-                    card.className = 'bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition';
-                    card.innerHTML = `
-                        <div>
-                            <img src="${imageUrl}" alt="${title}" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80'">
-                            <div class="p-5">
-                                <span class="text-[10px] bg-accent-green text-white font-bold px-2.5 py-1 rounded">${dateStr}</span>
-                                <h3 class="font-bold text-gray-900 text-base mt-3 mb-2">${title}</h3>
-                                <p class="text-xs text-gray-600 leading-relaxed mb-4 line-clamp-3">${summary}</p>
-                            </div>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <a href="activity-detail.html?file=${file.name}" class="inline-block bg-accent-green text-white text-xs font-bold px-4 py-2 rounded">อ่านรายละเอียดกิจกรรม →</a>
-                        </div>
-                    `;
-                    container.appendChild(card);
-                }
-            } catch (err) {
-                console.error(err);
-                container.innerHTML = '<p class="text-center text-red-500 col-span-3 py-10">ไม่สามารถโหลดข้อมูลได้</p>';
-            }
-        }
-        document.addEventListener('DOMContentLoaded', loadRecentEvents);
-    </script>
+    <script src="/js/events.js" defer></script>
 </body>
 </html>
