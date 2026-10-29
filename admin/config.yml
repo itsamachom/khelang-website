@@ -6,8 +6,9 @@ backend:
   auth_endpoint: /auth
 
 site_url: "https://khelang-website.pages.dev/"  # ใส่ URL หน้าเว็บจริงของคุณ
+publish_mode: simple
 
-# กำหนดโฟลเดอร์เก็บรูปภาพระดับ Global
+# ใช้โฟลเดอร์มาตรฐานโฟลเดอร์เดียวเท่านั้น หมดปัญหารูปหาไม่เจอ
 media_folder: "images/events"
 public_folder: "/images/events"
 
@@ -20,12 +21,7 @@ collections:
     format: "json"
     extension: "json"
     
-    editor:
-      preview: false
-      
-    # แยกโฟลเดอร์รูปภาพตามวันที่ของกิจกรรมอัตโนมัติ (ช่วยป้องการเซฟรูปชื่อซ้ำทับกัน)
-    media_folder: "images/events/{{year}}-{{month}}-{{day}}"
-    public_folder: "/images/events/{{year}}-{{month}}-{{day}}"
+    # เอาคำสั่งปิดหน้าพรีวิวออกไปแล้ว ผู้ใช้จะเห็นหน้าจอก่อน Save ครับ
     
     fields:
       - { label: "หัวข้อข่าว/กิจกรรม", name: "title", widget: "string" }
