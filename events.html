@@ -10,48 +10,99 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: { colors: { accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e', navGreen: '#1e7e34' } }, fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] } }
+                extend: {
+                    colors: { 
+                        accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e', navGreen: '#1e7e34' }, 
+                        dark: { bg: '#181818', card: '#222222' } 
+                    },
+                    fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] }
+                }
             }
         }
     </script>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased">
 
-    <!-- TOP HEADER & NAV -->
+    <!-- TOP HEADER -->
     <div class="w-full bg-white border-b border-gray-100 py-3">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.png" alt="โลโก้สมาคม" class="w-10 h-10 object-contain rounded">
+                <img src="logo.png" alt="โลโก้สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร" class="w-10 h-10 object-contain rounded">
                 <div>
-                    <span class="text-lg font-extrabold text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
-                    <span class="text-[10px] uppercase font-bold text-gray-400">Mueang Khelang Nakorn Business Tourism Association</span>
+                    <span class="text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
+                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Mueang Khelang Nakorn Business Tourism Assocication</span>
                 </div>
             </a>
+            <div class="flex flex-wrap items-center gap-6 text-xs text-gray-600">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-accent-green"></i><span>091-499-2294</span></div>
+                <div class="hidden sm:flex items-center gap-2"><i class="fa-solid fa-location-dot text-accent-green"></i><span>316 ม.3 ต.ต้นธงชัย อ.เมืองลำปาง 52000</span></div>
+                <a href="contact.html" class="bg-accent-green hover:bg-accent-hover text-white font-bold px-4 py-2 rounded text-xs transition uppercase">ติดต่อสมาคม</a>
+            </div>
         </div>
     </div>
-    <nav class="w-full bg-accent-navGreen text-white h-12 flex items-center text-xs font-bold uppercase">
-        <div class="max-w-7xl mx-auto px-4 flex gap-8">
-            <a href="index.html" class="hover:text-gray-200">หน้าหลัก</a>
-            <a href="about.html" class="hover:text-gray-200">เกี่ยวกับสมาคม</a>
-            <a href="mission.html" class="hover:text-gray-200">พันธกิจหลัก</a>
-            <a href="events.html" class="text-yellow-300 font-extrabold border-b-2 border-yellow-300">กิจกรรม & ข่าวสาร</a>
-            <a href="contact.html" class="hover:text-gray-200">ติดต่อเรา</a>
+
+    <!-- NAVIGATION -->
+    <nav class="w-full bg-accent-navGreen text-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gray-200 transition">หน้าหลัก</a>
+                <a href="about.html" class="hover:text-gray-200 transition">เกี่ยวกับสมาคม</a>
+                <a href="mission.html" class="hover:text-gray-200 transition">พันธกิจหลัก</a>
+                <a href="events.html" class="text-yellow-300 font-extrabold border-b-2 border-yellow-300 pb-0.5">กิจกรรม & ข่าวสาร</a>
+                <a href="contact.html" class="hover:text-gray-200 transition">ติดต่อเรา</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2"><i class="fa-solid fa-bars text-lg"></i></button>
+            <div class="hidden md:block text-xs font-medium text-white/80">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</div>
         </div>
     </nav>
 
-    <!-- CONTENT ALL EVENTS -->
+    <!-- HERO -->
+    <section class="w-full bg-gray-700 text-white py-14 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-3xl font-black mb-2">กิจกรรม & ข่าวสารสมาคมฯ</h1>
+            <p class="text-xs text-gray-200">ประมวลภาพและกิจกรรมขับเคลื่อนการท่องเที่ยวจังหวัดลำปาง</p>
+        </div>
+    </section>
+
+    <!-- REAL EVENTS LIST -->
     <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <h1 class="text-2xl font-black text-gray-900 mb-8">กิจกรรม & ข่าวสารทั้งหมด</h1>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-accent-darkGreen text-white py-8 text-center text-xs">
-        <p>&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร. สงวนลิขสิทธิ์ทุกประการ.</p>
+    <footer class="bg-accent-darkGreen text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10 text-xs">
+                <div>
+                    <h4 class="font-extrabold text-base mb-4 tracking-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</h4>
+                    <p class="text-gray-300 leading-relaxed">เลขที่ ๓๑๖ ม.๓ ต.ต้นธงชัย อำเภอเมืองลำปาง จังหวัดลำปาง ๕๒٠٠๐</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ลิงก์เมนูหลัก</h4>
+                    <ul class="space-y-2.5 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition">หน้าหลัก</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">เกี่ยวกับสมาคม</a></li>
+                        <li><a href="mission.html" class="hover:text-white transition">พันธกิจหลัก</a></li>
+                        <li><a href="events.html" class="hover:text-white transition">กิจกรรม & ข่าวสาร</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">ช่องทางติดต่อ</h4>
+                    <p class="text-gray-300">โทรศัพท์: ๐๙๑-๔๙๙๒๒๙๔</p>
+                    <p class="text-gray-300 mt-2">ต.ต้นธงชัย อ.เมืองลำปาง จ.ลำปาง</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4">นายกสมาคมฯ</h4>
+                    <p class="text-gray-300">นางวารุณี เมฆอากาศ</p>
+                    <p class="text-gray-400 text-[11px] mt-1">วาระปี 2569 - 2571</p>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-gray-400 text-[11px]">&copy; 2026 สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร (M.N.B.A). สงวนลิขสิทธิ์ทุกประการ.</div>
+        </div>
     </footer>
-
     <script src="/js/events.js" defer></script>
 </body>
 </html>
