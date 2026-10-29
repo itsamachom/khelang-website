@@ -1,0 +1,14 @@
+{
+  "title": "test2",
+  "date": "2026-10-29",
+  "thumbnail": "/images/events/img_0373.jpg",
+  "summary": "test 2 head",
+  "body": "intro test 2",
+  "gallery": [
+    "/images/events/img_0215.jpg",
+    "/images/events/img_0278.jpg",
+    "/images/events/img_0373.jpg",
+    "/images/events/pa170202.jpg",
+    "/images/events/pa170245.jpg"
+  ]
+}
