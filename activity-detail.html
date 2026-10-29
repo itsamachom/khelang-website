@@ -7,76 +7,44 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { 
-                        accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e', navGreen: '#1e7e34' } 
-                    },
-                    fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] }
-                }
-            }
+            theme: { extend: { colors: { accent: { green: '#749c51', hover: '#618541', darkGreen: '#23441e', navGreen: '#1e7e34' } }, fontFamily: { sans: ['Sarabun', 'Plus Jakarta Sans', 'sans-serif'] } } }
         }
     </script>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased">
 
-    <!-- TOP HEADER -->
+    <!-- HEADER & NAV -->
     <div class="w-full bg-white border-b border-gray-100 py-3">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="logo.png" alt="โลโก้สมาคม" class="w-10 h-10 object-contain rounded">
                 <div>
-                    <span class="text-lg font-extrabold tracking-tight text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
-                    <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Mueang Khelang Nakorn Business Tourism Association</span>
+                    <span class="text-lg font-extrabold text-gray-900 block leading-tight">สมาคมธุรกิจท่องเที่ยวเมืองเขลางค์นคร</span>
+                    <span class="text-[10px] uppercase font-bold text-gray-400">Mueang Khelang Nakorn Business Tourism Association</span>
                 </div>
             </a>
-            <div class="flex items-center gap-6 text-xs text-gray-600">
-                <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-accent-green"></i><span>091-499-2294</span></div>
-                <a href="contact.html" class="bg-accent-green hover:bg-accent-hover text-white font-bold px-4 py-2 rounded text-xs transition">ติดต่อสมาคม</a>
-            </div>
         </div>
     </div>
-
-    <!-- NAVIGATION -->
-    <nav class="w-full bg-accent-navGreen text-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12 text-xs font-bold uppercase tracking-wider">
-            <div class="flex items-center gap-8">
-                <a href="index.html" class="hover:text-gray-200">หน้าหลัก</a>
-                <a href="about.html" class="hover:text-gray-200">เกี่ยวกับสมาคม</a>
-                <a href="mission.html" class="hover:text-gray-200">พันธกิจหลัก</a>
-                <a href="events.html" class="text-yellow-300 font-extrabold border-b-2 border-yellow-300 pb-0.5">กิจกรรม & ข่าวสาร</a>
-                <a href="contact.html" class="hover:text-gray-200">ติดต่อเรา</a>
-            </div>
+    <nav class="w-full bg-accent-navGreen text-white h-12 flex items-center text-xs font-bold uppercase">
+        <div class="max-w-7xl mx-auto px-4 flex gap-8">
+            <a href="index.html" class="hover:text-gray-200">หน้าหลัก</a>
+            <a href="about.html" class="hover:text-gray-200">เกี่ยวกับสมาคม</a>
+            <a href="mission.html" class="hover:text-gray-200">พันธกิจหลัก</a>
+            <a href="events.html" class="text-yellow-300 font-extrabold border-b-2 border-yellow-300">กิจกรรม & ข่าวสาร</a>
+            <a href="contact.html" class="hover:text-gray-200">ติดต่อเรา</a>
         </div>
     </nav>
 
-    <!-- BREADCRUMB HEADER -->
-    <section class="w-full bg-gray-100 border-b border-gray-200 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
-                <a href="index.html" class="hover:text-accent-green">หน้าหลัก</a>
-                <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                <a href="events.html" class="hover:text-accent-green">กิจกรรม & ข่าวสาร</a>
-                <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                <span class="text-gray-800 font-semibold">รายละเอียดกิจกรรม</span>
-            </div>
-            <h1 id="event-title" class="text-2xl font-black text-gray-900 leading-snug">กำลังโหลดข้อมูล...</h1>
-        </div>
-    </section>
-
-    <!-- MAIN CONTENT -->
+    <!-- EVENT DETAIL MAIN CONTENT -->
     <main class="py-12 bg-white">
-        <div id="event-content" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+        <div id="event-content" class="max-w-5xl mx-auto px-4">
+            <h1 id="event-title" class="text-2xl font-black text-gray-900 mb-4">กำลังโหลดข้อมูล...</h1>
             <div class="flex flex-wrap items-center gap-4 text-xs text-gray-600 mb-8 pb-4 border-b border-gray-100">
                 <span id="badge-date" class="bg-accent-green text-white font-bold px-3 py-1 rounded-full"><i class="fa-regular fa-calendar-days mr-1"></i> <span id="event-date">-</span></span>
-                <span id="meta-time-box" class="hidden"><i class="fa-regular fa-clock text-accent-green mr-1"></i> <span id="event-time"></span></span>
                 <span><i class="fa-solid fa-location-dot text-accent-green mr-1"></i> <span id="event-location">จังหวัดลำปาง</span></span>
             </div>
 
@@ -88,18 +56,16 @@
 
             <div id="gallery-section" class="border-t border-gray-200 pt-8 hidden">
                 <h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
-                    <i class="fa-solid fa-images text-accent-green"></i>
-                    ประมวลภาพบรรยากาศกิจกรรม
+                    <i class="fa-solid fa-images text-accent-green"></i> ประมวลภาพบรรยากาศกิจกรรม
                 </h3>
                 <div id="event-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
             </div>
 
             <div class="mt-12 text-center">
-                <a href="events.html" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold px-6 py-3 rounded-md transition">
+                <a href="events.html" class="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold px-6 py-3 rounded">
                     <i class="fa-solid fa-arrow-left"></i> ย้อนกลับไปหน้ารวมกิจกรรม
                 </a>
             </div>
-
         </div>
     </main>
 
@@ -132,35 +98,27 @@
 
                 if (!response.ok) throw new Error('ไม่พบไฟล์กิจกรรม');
 
-                let title = '', dateStr = '', location = 'จังหวัดลำปาง', time = '', thumbnail = '', bodyContent = '', gallery = [];
+                let title = '', dateStr = '', location = 'จังหวัดลำปาง', thumbnail = '', bodyContent = '', gallery = [];
 
                 if (targetFile.endsWith('.json')) {
                     const data = await response.json();
                     title = data.title || 'กิจกรรมสมาคม';
                     dateStr = data.date ? new Date(data.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' }) : '-';
                     location = data.location || 'จังหวัดลำปาง';
-                    time = data.time || '';
-                    thumbnail = data.thumbnail || data.image || '';
+                    thumbnail = data.thumbnail || '';
                     bodyContent = data.body ? marked.parse(data.body) : (data.summary || '');
                     gallery = data.gallery || [];
                 } else {
                     const fileContent = await response.text();
-                    // แก้ไข Regex รองรับ \r\n ของ Windows
                     const parts = fileContent.split(/^---\r?$/m);
-                    
                     if (parts.length >= 3) {
                         const frontmatter = jsyaml.load(parts[1]);
-                        const markdownBody = parts.slice(2).join('---');
-
                         title = frontmatter.title || 'กิจกรรมสมาคม';
                         dateStr = frontmatter.date || '-';
                         location = frontmatter.location || 'จังหวัดลำปาง';
-                        time = frontmatter.time || '';
                         thumbnail = frontmatter.image || frontmatter.thumbnail || '';
-                        bodyContent = marked.parse(markdownBody);
+                        bodyContent = marked.parse(parts.slice(2).join('---'));
                         gallery = frontmatter.gallery || [];
-                    } else {
-                        bodyContent = marked.parse(fileContent);
                     }
                 }
 
@@ -168,11 +126,6 @@
                 document.getElementById('event-title').innerText = title;
                 document.getElementById('event-date').innerText = dateStr;
                 document.getElementById('event-location').innerText = location;
-
-                if (time) {
-                    document.getElementById('event-time').innerText = time;
-                    document.getElementById('meta-time-box').classList.remove('hidden');
-                }
 
                 if (thumbnail) {
                     const coverImg = document.getElementById('event-cover');
@@ -191,25 +144,24 @@
                         const imgPath = typeof item === 'string' ? item : (item.image || item.url || '');
                         if (!imgPath) return '';
                         return `
-                            <div class="overflow-hidden rounded-lg shadow-sm border border-gray-100 group">
-                                <img src="${imgPath}" alt="ภาพกิจกรรม" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" onerror="this.parentElement.style.display='none'">
+                            <div class="overflow-hidden rounded-lg shadow-sm border border-gray-100">
+                                <img src="${imgPath}" alt="ภาพกิจกรรม" class="w-full h-48 object-cover" onerror="this.parentElement.style.display='none'">
                             </div>
                         `;
                     }).join('');
                 }
 
-            } catch (error) {
-                console.error(error);
+            } catch (err) {
+                console.error(err);
                 document.getElementById('event-content').innerHTML = `
                     <div class="text-center py-16">
                         <i class="fa-solid fa-circle-exclamation text-red-500 text-4xl mb-4"></i>
-                        <p class="text-gray-800 font-bold mb-4">ไม่พบเนื้อหาข่าวสารที่ต้องการ หรือลิงก์อาจถูกเปลี่ยน</p>
+                        <p class="text-gray-800 font-bold mb-4">ไม่พบเนื้อหาข่าวสารที่ต้องการ</p>
                         <a href="events.html" class="bg-accent-green text-white px-5 py-2 rounded text-xs font-bold">ย้อนกลับไปหน้ารวมกิจกรรม</a>
                     </div>
                 `;
             }
         }
-
         document.addEventListener('DOMContentLoaded', loadEventDetail);
     </script>
 </body>
