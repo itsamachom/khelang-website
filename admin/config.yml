@@ -48,3 +48,19 @@ collections:
         collapsed: true
         hint: "กดเพิ่มเพื่อเลือกรูปทีละภาพ ระบบย่อและตั้งชื่อก่อนบันทึก รูปปกไม่จำเป็นต้องใส่ซ้ำ"
         field: {label: "รูปภาพ", name: image, widget: event-image}
+  - name: settings
+    label: "ตั้งค่าเว็บไซต์"
+    editor:
+      preview: false
+    files:
+      - name: calendar
+        label: "Google Calendar ของสมาคม"
+        file: content/settings/calendar.json
+        fields:
+          - {label: "ชื่อปฏิทิน", name: title, widget: string}
+          - {label: "คำอธิบาย", name: description, widget: text, required: false}
+          - label: "Calendar ID หรือลิงก์ Google Calendar"
+            name: calendar_id
+            widget: string
+            required: false
+            hint: "หาได้จาก Google Calendar → การตั้งค่า → ผสานรวมปฏิทิน ปฏิทินต้องเปิดให้สาธารณะดูรายละเอียดกิจกรรมได้ เว้นว่างเพื่อพักการแสดงผล"

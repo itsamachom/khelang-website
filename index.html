@@ -33,6 +33,8 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="/css/calendar.css">
+    <script src="/js/calendar.js" defer></script>
 </head>
 <body class="bg-white text-gray-800 font-sans antialiased selection:bg-accent-green selection:text-white">
 
@@ -49,11 +51,12 @@
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
+            <nav class="hidden xl:flex items-center gap-6 text-xs font-semibold text-gray-600">
                 <a href="index.html" class="text-gray-900 hover:text-accent-green transition">หน้าหลัก</a>
                 <a href="about.html" class="hover:text-accent-green transition">เกี่ยวกับสมาคม</a>
                 <a href="mission.html" class="hover:text-accent-green transition">พันธกิจหลัก</a>
                 <a href="events.html" class="hover:text-accent-green transition">กิจกรรม & ข่าวสาร</a>
+                <a href="calendar.html" class="hover:opacity-80 whitespace-nowrap">ปฏิทินกิจกรรม</a>
                 <a href="contact.html" class="hover:text-accent-green transition">ติดต่อเรา</a>
             </nav>
 
@@ -62,18 +65,19 @@
                 <button class="p-2 text-gray-600 hover:text-gray-900 transition" aria-label="Search">
                     <i class="fa-solid fa-magnifying-glass text-lg"></i>
                 </button>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600" aria-label="Toggle Menu">
+                <button id="mobile-menu-btn" class="xl:hidden p-2 text-gray-600" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b px-6 py-4 space-y-3 text-sm font-medium">
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-b px-6 py-4 space-y-3 text-sm font-medium">
             <a href="index.html" class="block text-accent-green font-bold">หน้าหลัก</a>
             <a href="about.html" class="block text-gray-600 hover:text-accent-green">เกี่ยวกับสมาคม</a>
             <a href="mission.html" class="block text-gray-600 hover:text-accent-green">พันธกิจหลัก</a>
             <a href="events.html" class="block text-gray-600 hover:text-accent-green">กิจกรรม & ข่าวสาร</a>
+                <a href="calendar.html" class="block hover:opacity-80 whitespace-nowrap">ปฏิทินกิจกรรม</a>
             <a href="contact.html" class="block text-gray-600 hover:text-accent-green">ติดต่อเรา</a>
         </div>
     </header>
@@ -200,7 +204,15 @@
             </div>
 
             <!-- Grid 3 ข่าวแรก -->
-            <div id="recent-events-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+            <div class="news-calendar-layout">
+                <div id="recent-events-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+                <aside class="calendar-sidebar" aria-labelledby="upcoming-calendar-heading">
+                    <div class="calendar-sidebar-heading"><h3 id="upcoming-calendar-heading">กิจกรรมที่กำลังจะมาถึง</h3><p>กำหนดการประชุมและงานสมาคม ติดตามต่อบนมือถือได้</p></div>
+                    <div data-google-calendar="agenda"><p class="calendar-message">กำลังโหลดกำหนดการ…</p></div>
+                    <noscript><p class="calendar-message">เปิด JavaScript เพื่อดูกำหนดการ หรือติดต่อสมาคม</p></noscript>
+                    <a class="calendar-sidebar-more" href="calendar.html">ดูปฏิทินกิจกรรมทั้งหมด →</a>
+                </aside>
+            </div>
         </div>
     </section>
 
@@ -266,6 +278,7 @@
                         <li><a href="about.html" class="hover:text-white transition">เกี่ยวกับสมาคม</a></li>
                         <li><a href="mission.html" class="hover:text-white transition">พันธกิจหลัก</a></li>
                         <li><a href="events.html" class="hover:text-white transition">กิจกรรม & ข่าวสาร</a></li>
+                        <li><a href="calendar.html" class="hover:opacity-80 whitespace-nowrap">ปฏิทินกิจกรรม</a></li>
                         <li><a href="contact.html" class="hover:text-white transition">ติดต่อเรา</a></li>
                     </ul>
                 </div>
